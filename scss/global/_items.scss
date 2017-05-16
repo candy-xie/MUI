@@ -1,0 +1,541 @@
+/**
+ * Items
+ * --------------------------------------------------
+ */
+
+.item {
+  @include item-style($light-bg, $light-border, $light-text);
+
+  position: relative;
+  z-index: 2; // Make sure the borders and stuff don't get hidden by children
+  display: block;
+
+  margin: -1px;
+  padding: $item-padding;
+
+  border-width: 1px;
+  border-style: solid;
+  font-size: 13px;
+
+  h2 {
+    margin: 0 0 2px 0;
+    font-size: 16px;
+    font-weight: normal;
+  }
+  h3 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+  }
+  h4 {
+    margin: 0 0 4px 0;
+    font-size: 12px;
+  }
+  h5, h6 {
+    margin: 0 0 3px 0;
+    font-size: 10px;
+  }
+  p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  h1:last-child,
+  h2:last-child,
+  h3:last-child,
+  h4:last-child,
+  h5:last-child,
+  h6:last-child,
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  // Align badges within items
+  .badge {
+    @include display-flex();
+    position: absolute;
+    top: $item-padding;
+    //right: ($item-padding * 2);
+    right: $item-padding;
+  }
+  &.item-button-right .badge {
+    right: ($item-padding * 2) + 35;
+  }
+  &.item-divider .badge {
+    top: ceil($item-padding / 2);
+  }
+  .badge + .badge {
+    margin-right: 5px;
+  }
+
+  // Different themes for items
+  &.item-light {
+    @include item-style($light-bg, $light-border, $light-text);
+  }
+  &.item-stable {
+    @include item-style($stable-bg, $stable-border, $stable-text);
+  }
+  &.item-positive {
+    @include item-style($positive-bg, $positive-border, $positive-text);
+  }
+  //&.item-assertive {
+  //  @include item-style($assertive-bg, $assertive-border, $assertive-text);
+  //}
+  &[ng-click]:hover {
+    cursor: pointer;
+  }
+
+}
+
+.list-borderless .item,
+.item-borderless {
+  border-width: 0;
+}
+
+// Link and Button Active States
+.item.active,
+.item.activated,
+.item-complex.active .item-content,
+.item-complex.activated .item-content,
+.item .item-content.active,
+.item .item-content.activated {
+  @include item-active-style($item-default-active-bg, $light-active-border);
+
+  // Different active themes for <a> and <button> items
+  &.item-light {
+    @include item-active-style($light-active-bg, $light-active-border);
+  }
+  &.item-stable {
+    @include item-active-style($stable-active-bg, $stable-active-border);
+  }
+  &.item-positive {
+    @include item-active-style($positive-active-bg, $positive-active-border);
+  }
+}
+
+// Handle text overflow
+.item,
+.item h1,
+.item h2,
+.item h3,
+.item h4,
+.item h5,
+.item h6,
+.item p,
+.item-content,
+.item-content h1,
+.item-content h2,
+.item-content h3,
+.item-content h4,
+.item-content h5,
+.item-content h6,
+.item-content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Linked list items
+a.item {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+
+/**
+ * Complex Items
+ * --------------------------------------------------
+ * Adding .item-complex allows the .item to be slidable and
+ * have options underneath the button, but also requires an
+ * additional .item-content element inside .item.
+ * Basically .item-complex removes any default settings which
+ * .item added, so that .item-content looks them as just .item.
+ */
+
+.item-complex,
+a.item.item-complex,
+button.item.item-complex {
+  padding: 0;
+}
+.item-complex .item-content,
+.item-radio .item-content {
+  position: relative;
+  z-index: 2;
+  padding: $item-padding (ceil( ($item-padding * 3) + ($item-padding / 3) ) - 5) $item-padding $item-padding;
+  border: none;
+  background-color: $light-bg;
+}
+
+a.item-content {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.item-text-wrap .item,
+.item-text-wrap .item-content,
+.item-text-wrap,
+.item-text-wrap h1,
+.item-text-wrap h2,
+.item-text-wrap h3,
+.item-text-wrap h4,
+.item-text-wrap h5,
+.item-text-wrap h6,
+.item-text-wrap p,
+.item-complex.item-text-wrap .item-content,
+.item-body h1,
+.item-body h2,
+.item-body h3,
+.item-body h4,
+.item-body h5,
+.item-body h6,
+.item-body p {
+  overflow: visible;
+  white-space: normal;
+}
+.item-complex.item-text-wrap,
+.item-complex.item-text-wrap h1,
+.item-complex.item-text-wrap h2,
+.item-complex.item-text-wrap h3,
+.item-complex.item-text-wrap h4,
+.item-complex.item-text-wrap h5,
+.item-complex.item-text-wrap h6,
+.item-complex.item-text-wrap p {
+  overflow: visible;
+  white-space: normal;
+}
+
+// Link and Button Active States
+
+.item-complex{
+  // Stylized items
+  &.item-light > .item-content{
+    @include item-style($light-bg, $light-border, $light-text);
+    &.active, &:active {
+      @include item-active-style($light-active-bg, $light-active-border);
+    }
+  }
+  &.item-stable > .item-content{
+    @include item-style($stable-bg, $stable-border, $stable-text);
+    &.active, &:active {
+      @include item-active-style($stable-active-bg, $stable-active-border);
+    }
+  }
+  &.item-positive > .item-content{
+    @include item-style($positive-bg, $positive-border, $positive-text);
+    &.active, &:active {
+      @include item-active-style($positive-active-bg, $positive-active-border);
+    }
+  }
+}
+
+
+/**
+ * Item Icons
+ * --------------------------------------------------
+ */
+
+.item-icon-left .iconfont,
+.item-icon-right .iconfont {
+  @include display-flex();
+  @include align-items(center);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  font-size: $item-icon-font-size;
+
+  &:before {
+    display: block;
+    width: $item-icon-font-size;
+    text-align: center;
+  }
+}
+
+//.item .fill-icon {
+//  min-width: $item-icon-fill-font-size + 2;
+//  min-height: $item-icon-fill-font-size + 2;
+//  font-size: $item-icon-fill-font-size;
+//}
+
+.item-icon-left {
+  padding-left: ceil( ($item-padding * 3) + ($item-padding / 3) );
+
+  .iconfont {
+    left: $item-padding;
+  }
+}
+.item-complex.item-icon-left {
+  padding-left: 0;
+
+  .item-content {
+    padding-left: ceil( ($item-padding * 3) + ($item-padding / 3) );
+  }
+}
+
+.item-icon-right {
+  padding-right: ceil( ($item-padding * 3) + ($item-padding / 3) );
+
+  .iconfont {
+    right: $item-padding;
+  }
+}
+.item-complex.item-icon-right {
+  padding-right: 0;
+
+  .item-content {
+    padding-right: ceil( ($item-padding * 3) + ($item-padding / 3) );
+  }
+}
+
+.item-icon-left.item-icon-right .iconfont:first-child {
+  right: auto;
+}
+.item-icon-left.item-icon-right .iconfont:last-child,
+.item-icon-left .item-delete .iconfont {
+  left: auto;
+}
+
+
+/**
+ * Item Button
+ * --------------------------------------------------
+ * An item button is a child button inside an .item (not the entire .item)
+ */
+
+.item-button-left {
+  padding-left: ceil($item-padding * 4.5);
+}
+
+.item-button-left > .button,
+.item-button-left .item-content > .button {
+  @include display-flex();
+  @include align-items(center);
+  position: absolute;
+  top: ceil($item-padding / 2);
+  left: ceil( ($item-padding / 3) * 2);
+  min-width: $item-icon-font-size + ($button-border-width * 2);
+  min-height: $item-icon-font-size + ($button-border-width * 2);
+  font-size: 18px;
+  line-height: 32px;
+
+  .iconfont:before {
+    position: relative;
+    left: auto;
+    width: auto;
+    line-height: $item-icon-font-size - 1;
+  }
+
+  > .button {
+    margin: 0px 2px;
+    min-height: $item-icon-font-size + ($button-border-width * 2);
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+
+.item-button-right,
+a.item.item-button-right,
+button.item.item-button-right {
+  padding-right: $item-padding * 5;
+}
+
+.item-button-right > .button,
+.item-button-right .item-content > .button,
+.item-button-right > .buttons,
+.item-button-right .item-content > .buttons {
+  @include display-flex();
+  @include align-items(center);
+  position: absolute;
+  top: ceil($item-padding / 2);
+  right: $item-padding;
+  min-width: $item-icon-font-size + ($button-border-width * 2);
+  min-height: $item-icon-font-size + ($button-border-width * 2);
+  font-size: 18px;
+  line-height: 32px;
+
+  .iconfont:before {
+    position: relative;
+    left: auto;
+    width: auto;
+    line-height: $item-icon-font-size - 1;
+  }
+
+  > .button {
+    margin: 0px 2px;
+    min-width: $item-icon-font-size + ($button-border-width * 2);
+    min-height: $item-icon-font-size + ($button-border-width * 2);
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+
+.item-button-left.item-button-right{
+   .button{
+     &:first-child {
+      right: auto;
+    }
+     &:last-child {
+      left: auto;
+    }
+   }
+}
+
+// Item Avatar
+// -------------------------------
+
+.item-avatar,
+.item-avatar .item-content,
+.item-avatar-left,
+.item-avatar-left .item-content {
+  padding-left: $item-avatar-width + ($item-padding * 2);
+  min-height: $item-avatar-width + ($item-padding * 2);
+
+  > img:first-child,
+  .item-image {
+    position: absolute;
+    top: $item-padding;
+    left: $item-padding;
+    max-width: $item-avatar-width;
+    max-height: $item-avatar-height;
+    width: 100%;
+    height: 100%;
+    border-radius: $item-avatar-border-radius;
+  }
+}
+
+.item-avatar-right,
+.item-avatar-right .item-content {
+  padding-right: $item-avatar-width + ($item-padding * 2);
+  min-height: $item-avatar-width + ($item-padding * 2);
+
+  > img:first-child,
+  .item-image {
+    position: absolute;
+    top: $item-padding;
+    right: $item-padding;
+    max-width: $item-avatar-width;
+    max-height: $item-avatar-height;
+    width: 100%;
+    height: 100%;
+    border-radius: $item-avatar-border-radius;
+  }
+}
+
+
+// Item Thumbnails
+// -------------------------------
+
+.item-thumbnail-left,
+.item-thumbnail-left .item-content {
+  padding-top: $item-padding / 2 + 2;
+  padding-left: $item-thumbnail-width + $item-thumbnail-margin + $item-padding;
+  min-height: $item-thumbnail-height + ($item-thumbnail-margin * 2);
+
+  > img:first-child,
+  .item-image {
+    position: absolute;
+    top: $item-thumbnail-margin;
+    left: $item-thumbnail-margin;
+    max-width: $item-thumbnail-width;
+    max-height: $item-thumbnail-height;
+    width: 100%;
+    height: 100%;
+  }
+}
+.item-avatar.item-complex,
+.item-avatar-left.item-complex,
+.item-thumbnail-left.item-complex {
+  padding-top: 0;
+  padding-left: 0;
+}
+
+.item-thumbnail-right,
+.item-thumbnail-right .item-content {
+  padding-top: $item-padding / 2 +2;
+  padding-right: $item-thumbnail-width + $item-thumbnail-margin + $item-padding;
+  min-height: $item-thumbnail-height + ($item-thumbnail-margin * 2);
+
+  > img:first-child,
+  .item-image {
+    position: absolute;
+    top: $item-thumbnail-margin;
+    right: $item-thumbnail-margin;
+    max-width: $item-thumbnail-width;
+    max-height: $item-thumbnail-height;
+    width: 100%;
+    height: 100%;
+  }
+}
+.item-avatar-right.item-complex,
+.item-thumbnail-right.item-complex {
+  padding-top: 0;
+  padding-right: 0;
+}
+
+
+// Item Image
+// -------------------------------
+
+.item-image {
+  padding: 0;
+  text-align: center;
+
+  img:first-child, .list-img {
+    width: 100%;
+    vertical-align: middle;
+  }
+}
+
+// Item larger
+// -------------------------------
+.item-larger{
+  float: left;
+  width: 48%;
+  margin-right: 1%;
+  margin-left: 1%;
+  img{
+    width: 100%;
+  }
+}
+
+// Item Body
+// -------------------------------
+
+.item-body {
+  overflow: auto;
+  padding: $item-padding;
+  text-overflow: inherit;
+  white-space: normal;
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin-top: $item-padding;
+    margin-bottom: $item-padding;
+  }
+}
+
+
+// Item Divider
+// -------------------------------
+
+.item-divider {
+  padding-top: ceil($item-padding / 2);
+  padding-bottom: ceil($item-padding / 2);
+  min-height: 30px;
+  background-color: $item-divider-bg;
+  color: $item-divider-color;
+  font-weight: 500;
+}
+
+// Item Note
+// -------------------------------
+
+.item-note {
+  float: right;
+  color: #aaa;
+  font-size: 14px;
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>tab切换</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/iconfont/iconfont.css">
+    <style>
+        .tabCon{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bar bar-header bar-positive">
+        <h1 class="title">tab切换</h1>
+    </div>
+    <div class="tabs tabs-top" id="tabs">
+        <a href="#" class="tab-item active">标签1</a>
+        <a href="#" class="tab-item">标签2</a>
+        <a href="#" class="tab-item">标签3</a>
+    </div>
+    <div class="content scroll-content has-tabs-top">
+        <div class="tab-content">
+            <div class="tabCon show">
+                标签一的内容。
+            </div>
+            <div class="tabCon">
+                标签二的内容。
+            </div>
+            <div class="tabCon">
+                标签三的内容。
+            </div>
+        </div>
+
+    </div>
+    <script src="../js/classie.js"></script>
+    <script>
+        var tabItem = document.getElementById("tabs").getElementsByClassName("tab-item");
+        var tabCon = document.getElementsByClassName("tabCon");
+        for(var i=0;i<tabItem.length;i++){
+            tabItem[i].index = i;
+            tabItem[i].onclick = function(){
+                tabShow(this.index);
+            }
+        }
+        function tabShow(a){
+            index = a;
+            for(var i=0;i<tabItem.length;i++){
+                classie.removeClass( tabItem[i], 'active' );
+                tabCon[i].style.display= "none";
+            }
+            classie.addClass( tabItem[index], 'active' );
+            tabCon[index].style.display= "block";
+        }
+
+    </script>
+</body>
+</html>

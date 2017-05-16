@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS组件</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="MUI规范"/>
+    <link rel="stylesheet" href="../css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/demo.css">
+    <!--<script src="../js/jquery.min.js"></script>-->
+    <script src="../js/zepto.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="head-area clearfix">
+            <div class="fl"><h1><a href="/">MUI</a></h1></div>
+            <div class="fr"><a class="nav-toggle"></a>
+                <ol class="main-nav">
+                    <li><a href="components.html">基础组件</a></li>
+                    <li><a href="extends.html">扩展组件</a></li>
+                    <li><a href="customize.html">定制组件</a></li>
+                    <li><a href="extendJs.html">JS组件</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>JS组件</h1>
+        <p>针对移动端开发的js组件库</p>
+    </div>
+</header>
+<div class="content">
+    <ul class="side-menu">
+        <li class="active">
+            <a href="#slide">幻灯片</a>
+        </li>
+        <li>
+            <a href="#menu">侧边栏</a>
+        </li>
+        <li>
+            <a href="#searchbar">搜索栏</a>
+        </li>
+        <li>
+            <a href="#tabs">tab切换</a>
+        </li>
+
+    </ul>
+    <div class="components">
+        <div class="component" id="slide">
+            <h2 class="component-title">幻灯片</h2>
+            <!--<h3 class="component-title-h3">Header</h3>-->
+            <p class="component-desc">Header是固定在屏幕顶部的组件。可以包含如标题和左右的功能按钮, 可以自定义颜色。</p>
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <img src="../img/1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <img src="../img/1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <img src="../img/1.jpg" alt=""/>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination">
+                        </div>
+                    </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="swiper-container"&gt;</code>
+                     <code>&lt;div class="swiper-wrapper"&gt;</code>
+                     <code>&lt;div class="swiper-slide"&gt;</code>
+                     <code>&lt;a href=""&gt;</code>
+                     <code>&lt;img src="../img/1.jpg" alt=""/&gt;</code>
+                     <code>&lt;/a&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="swiper-slide"&gt;</code>
+                     <code>&lt;a href=""&gt;</code>
+                     <code>&lt;img src="../img/1.jpg" alt=""/&gt;</code>
+                     <code>&lt;/a&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="swiper-slide"&gt;</code>
+                     <code>&lt;a href=""&gt;</code>
+                     <code>&lt;img src="../img/1.jpg" alt=""/&gt;</code>
+                     <code>&lt;/a&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="swiper-pagination"&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+        </div>
+        <div class="component" id="menu">
+            <h2 class="component-title">侧边栏</h2>
+            <h3 class="component-title-h3">左滑侧栏<a href="../demo/html/panels.html" class="link">演示</a></h3>
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;">
+                    <iframe src="../demo/html/panels.html" frameborder="0" width="375" height="260"></iframe>
+                </div>
+                <pre class="highlight">
+                     <code>参考demo代码</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3">左推动侧栏<a href="../demo/html/panels-push.html" class="link">演示</a></h3>
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;">
+                    <iframe src="../demo/html/panels-push.html" frameborder="0" width="375" height="260"></iframe>
+                </div>
+                <pre class="highlight">
+                     <code>参考demo代码</code>
+                </pre>
+            </div>
+        </div>
+        <div class="component" id="searchbar">
+            <h2 class="component-title">搜索栏<a href="../demo/html/search-bar.html" class="link">演示</a></h2>
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;">
+                    <iframe src="../demo/html/search-bar.html" frameborder="0" width="375" height="54"></iframe>
+                </div>
+                <pre class="highlight">
+                     <code>参考demo代码</code>
+                </pre>
+            </div>
+        </div>
+        <div class="component" id="tabs">
+            <h2 class="component-title">tab切换<a href="../demo/html/tabs.html" class="link">演示</a></h2>
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;">
+                    <iframe src="../demo/html/tabs.html" frameborder="0" width="375" height="150"></iframe>
+                </div>
+                <pre class="highlight">
+                     <code>参考demo代码</code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>MUI规范1.1 2016/03</p>
+</footer>
+<!--<a href="javascript:;" class="scroll-top-btn">回到顶部</a>-->
+
+<script src="../js/sm.js"></script>
+<script src="../js/sm-extend.js"></script>
+<!--<script src="../js/city-picker.js"></script>-->
+<script>
+    $(window).scroll(function(){
+
+        $(".side-menu li").click(function(){
+            $(this).addClass("active");
+            if($(this).has("ul")){
+                $(this).children("ul").show("slow");
+                $(".side-menu li ul li").click(function(){
+                    $(this).addClass("active").siblings().removeClass("active");
+                })
+            }
+            $(this).siblings().removeClass("active");
+            $(this).siblings().children("ul").hide("slow");
+        })
+
+        var scrollTop = $(window).scrollTop();
+
+        if(scrollTop > 102 ){
+            $(".side-menu").css("position","fixed");
+        }
+        else{
+            $(".side-menu").css("position","relative");
+        }
+        if(scrollTop>400){
+            $(".scroll-top-btn").show();
+            $(".scroll-top-btn").click(function(e){
+                e.preventDefault();
+                $("html,body").animate({scrollTop:0},800)
+            })
+        }
+        else{
+            $(".scroll-top-btn").hide();
+        }
+
+    })
+    $(function() {
+        $(".swiper-container").swiper({
+            loop : true,
+            autoplay:5000,
+            pagination : '.swiper-pagination',
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>定制组件</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="MUI规范"/>
+    <link rel="stylesheet" href="../css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/demo.css">
+    <script src="../js/zepto.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="head-area clearfix">
+            <div class="fl"><h1><a href="/">MUI</a></h1></div>
+            <div class="fr"><a class="nav-toggle"></a>
+                <ol class="main-nav">
+                    <li><a href="components.html">基础组件</a></li>
+                    <li><a href="extends.html">扩展组件</a></li>
+                    <li><a href="customize.html">定制组件</a></li>
+                    <li><a href="extendJs.html">JS组件</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>定制组件</h1>
+        <p>针对移动端开发的定制组件库</p>
+    </div>
+</header>
+<div class="content">
+    <ul class="side-menu">
+        <li class="active">
+            <a href="#logis">物流信息</a>
+        </li>
+        <li>
+            <a href="#coupons">优惠券</a>
+        </li>
+        <li>
+            <a href="#searchbar">搜索栏</a>
+        </li>
+        <li>
+            <a href="#tabs">tab切换</a>
+        </li>
+
+    </ul>
+    <div class="components">
+        <div class="component" id="logis">
+            <h2 class="component-title">物流信息</h2>
+            <h3 class="component-title-h3"></h3>
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;">
+                      <div class="logis">
+                          <div class="item logis-title">物流跟踪</div>
+                          <ul class="logis-info">
+                              <li class="logis-step">
+                                  <i class="label"></i>
+                                  <div class="logis-step-info">
+                                      <p>已签收，签收人是某某</p>
+                                      <p>2016-02-29 20:56:59</p>
+                                  </div>
+                              </li>
+                              <li class="logis-step">
+                                  <i class="label"></i>
+                                  <div class="logis-step-info">
+                                      <p>快递公司的莫某某正在配送，电话<span class="tel">12345678990</span></p>
+                                      <p>2016-02-29 20:56:59</p>
+                                  </div>
+                              </li>
+                              <li class="logis-step">
+                                  <i class="label"></i>
+                                  <div class="logis-step-info">
+                                      <p>[大连市] 大连已发出</p>
+                                      <p>2016-02-29 20:56:59</p>
+                                  </div>
+                              </li>
+                              <li class="logis-step">
+                                  <i class="label"></i>
+                                  <div class="logis-step-info">
+                                      <p>[大连市] 大连已发出</p>
+                                      <p>2016-02-29 20:56:59</p>
+                                  </div>
+                              </li>
+                          </ul>
+                      </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="logis"&gt;</code>
+                     <code>&lt;div class="item logis-title"&gt;物流跟踪&lt;/div&gt;</code>
+                     <code>&lt;ul class="logis-info"&gt;</code>
+                     <code>&lt;li class="logis-step"&gt;</code>
+                     <code>&lt;i class="label"&gt;&lt;/i&gt;</code>
+                     <code>&lt;div class="logis-step-info"&gt;</code>
+                     <code>&lt;p&gt;已签收，签收人是某某&lt;/p&gt;</code>
+                     <code>&lt;p&gt;2016-02-29 20:56:59&lt;/p&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/li&gt;</code>
+                     <code>&lt;li class="logis-step"&gt;</code>
+                     <code>&lt;i class="label"&gt;&lt;/i&gt;</code>
+                     <code>&lt;div class="logis-step-info"&gt;</code>
+                     <code>&lt;p&gt;快递公司的莫某某正在配送，电话&lt;span class="tel"&gt;12345678990&lt;/span&gt;&lt;/p&gt;</code>
+                     <code>&lt;p&gt;2016-02-29 20:56:59&lt;/p&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/li&gt;</code>
+                     <code>&lt;li class="logis-step"&gt;</code>
+                     <code>&lt;i class="label"&gt;&lt;/i&gt;</code>
+                     <code>&lt;div class="logis-step-info"&gt;</code>
+                     <code>&lt;p&gt;[大连市] 大连已发出&lt;/p&gt;</code>
+                     <code>&lt;p&gt;2016-02-29 20:56:59&lt;/p&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/li&gt;</code>
+                     <code>&lt;li class="logis-step"&gt;</code>
+                     <code>&lt;i class="label"&gt;&lt;/i&gt;</code>
+                     <code>&lt;div class="logis-step-info"&gt;</code>
+                     <code>&lt;p&gt;[大连市] 大连已发出&lt;/p&gt;</code>
+                     <code>&lt;p&gt;2016-02-29 20:56:59&lt;/p&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/li&gt;</code>
+                     <code>&lt;/ul&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3"></h3>
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;">
+                    <div class="logis tep-logis">
+                        <div class="item logis-title">物流跟踪</div>
+                        <ul class="logis-info">
+                            <li class="logis-step">
+                                <span class="vertical-line"></span>
+                                <i class="label"></i>
+                                <div class="logis-step-info">
+                                    <p>已签收，签收人是某某</p>
+                                    <p>2016-02-29 20:56:59</p>
+                                </div>
+                            </li>
+                            <li class="logis-step">
+                                <span class="vertical-line"></span>
+                                <i class="label"></i>
+                                <div class="logis-step-info">
+                                    <p>快递公司的莫某某正在配送，电话<span class="tel">12345678990</span></p>
+                                    <p>2016-02-29 20:56:59</p>
+                                </div>
+                            </li>
+                            <li class="logis-step">
+                                <span class="vertical-line"></span>
+                                <i class="label"></i>
+                                <div class="logis-step-info">
+                                    <p>[大连市] 大连已发出</p>
+                                    <p>2016-02-29 20:56:59</p>
+                                </div>
+                            </li>
+                            <li class="logis-step">
+                                <span class="vertical-line"></span>
+                                <i class="label"></i>
+                                <div class="logis-step-info">
+                                    <p>[大连市] 大连已发出</p>
+                                    <p>2016-02-29 20:56:59</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="logis tep-logis"&gt;</code>
+                     <code>&lt;div class="item logis-title"&gt;物流跟踪&lt;/div&gt;</code>
+                     <code>&lt;ul class="logis-info"&gt;</code>
+                     <code>&lt;li class="logis-step"&gt;</code>
+                     <code>&lt;span class="vertical-line"&gt;&lt;/span&gt;</code>
+                     <code>&lt;i class="label"&gt;&lt;/i&gt;</code>
+                     <code>&lt;div class="logis-step-info"&gt;</code>
+                     <code>&lt;p&gt;已签收，签收人是某某&lt;/p&gt;</code>
+                     <code>&lt;p&gt;2016-02-29 20:56:59&lt;/p&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/li&gt;</code>
+                     <code>&lt;li class="logis-step"&gt;</code>
+                     <code>&lt;span class="vertical-line"&gt;&lt;/span&gt;</code>
+                     <code>&lt;i class="label"&gt;&lt;/i&gt;</code>
+                     <code>&lt;div class="logis-step-info"&gt;</code>
+                     <code>&lt;p&gt;快递公司的莫某某正在配送，电话&lt;span class="tel"&gt;12345678990&lt;/span&gt;&lt;/p&gt;</code>
+                     <code>&lt;p&gt;2016-02-29 20:56:59&lt;/p&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/li&gt;</code>
+                     <code>&lt;li class="logis-step"&gt;</code>
+                     <code>&lt;span class="vertical-line"&gt;&lt;/span&gt;</code>
+                     <code>&lt;i class="label"&gt;&lt;/i&gt;</code>
+                     <code>&lt;div class="logis-step-info"&gt;</code>
+                     <code>&lt;p&gt;[大连市] 大连已发出&lt;/p&gt;</code>
+                     <code>&lt;p&gt;2016-02-29 20:56:59&lt;/p&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/li&gt;</code>
+                     <code>&lt;li class="logis-step"&gt;</code>
+                     <code>&lt;span class="vertical-line"&gt;&lt;/span&gt;</code>
+                     <code>&lt;i class="label"&gt;&lt;/i&gt;</code>
+                     <code>&lt;div class="logis-step-info"&gt;</code>
+                     <code>&lt;p&gt;[大连市] 大连已发出&lt;/p&gt;</code>
+                     <code>&lt;p&gt;2016-02-29 20:56:59&lt;/p&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/li&gt;</code>
+                     <code>&lt;/ul&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+        </div>
+        <div class="component" id="coupons">
+            <h2 class="component-title">优惠券</h2>
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;">
+                     <div class="coupons-group">
+                         <div class="coupons" style="width: 414px;margin: inherit;">
+                             <div class="coupons-body">
+                                 <div class="coupons-left">
+                                     <div class="title">
+                                         <h1>
+                                             <span>¥</span>
+                                             <span class="num">200</span>
+                                         </h1>
+                                         <p>满999减100</p>
+                                     </div>
+                                 </div>
+                                 <div class="coupons-right">
+                                     <dl>
+                                         <dt>全品牌抵用</dt>
+                                         <dd>
+                                             <label for="">适用范围：</label>
+                                             全品牌
+                                         </dd>
+                                         <dd>
+                                             <label for="">有效期至：</label>
+                                             2015.03.12
+                                         </dd>
+                                         <dd>
+                                             <label for="">券号：</label>
+                                             12345678912
+                                         </dd>
+                                     </dl>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="coupons used" style="width: 414px;margin: 15px 0 0 0;">
+                             <div class="coupons-body">
+                                 <div class="coupons-left">
+                                     <div class="title">
+                                         <h1>
+                                             <span>¥</span>
+                                             <span class="num">200</span>
+                                         </h1>
+                                         <p>满999减100</p>
+                                     </div>
+
+                                 </div>
+                                 <div class="coupons-right">
+                                     <dl>
+                                         <dt>全品牌抵用</dt>
+                                         <dd>
+                                             <label for="">适用范围：</label>
+                                             全品牌
+                                         </dd>
+                                         <dd>
+                                             <label for="">有效期至：</label>
+                                             2015.03.12
+                                         </dd>
+                                         <dd>
+                                             <label for="">券号：</label>
+                                             12345678912
+                                         </dd>
+                                     </dl>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="coupons-group"&gt;</code>
+                     <code>&lt;div class="coupons" style="width: 414px;margin: inherit;"&gt;</code>
+                     <code>&lt;div class="coupons-body"&gt;</code>
+                     <code>&lt;div class="coupons-left"&gt;</code>
+                     <code>&lt;div class="title"&gt;</code>
+                     <code>&lt;h1&gt;</code>
+                     <code>&lt;span&gt;¥&lt;/span&gt;&lt;span class="num"&gt;200&lt;/span&gt;</code>
+                     <code>&lt;p&gt;满999减100&lt;/p&gt;</code>
+                     <code>&lt;/h1&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="coupons-right"&gt;</code>
+                     <code>&lt;dl&gt;</code>
+                     <code>&lt;dt&gt;全品牌抵用&lt;/dt&gt;</code>
+                     <code>&lt;dd&gt; &lt;label for=""&gt;适用范围：&lt;/label&gt;全品牌&lt;/dd&gt;</code>
+                     <code>&lt;dd&gt; &lt;label for=""&gt;有效期至：&lt;/label&gt;2015.03.12&lt;/dd&gt;</code>
+                     <code>&lt;dd&gt; &lt;label for=""&gt;券号：&lt;/label&gt;12345678912&lt;/dd&gt;</code>
+                     <code>&lt;/dl&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                      <code>&lt;div class="coupons used" style="width: 414px;margin: 15px 0 0 0;"&gt;</code>
+                     <code>&lt;div class="coupons-body"&gt;</code>
+                     <code>&lt;div class="coupons-left"&gt;</code>
+                     <code>&lt;div class="title"&gt;</code>
+                     <code>&lt;h1&gt;</code>
+                     <code>&lt;span&gt;¥&lt;/span&gt;&lt;span class="num"&gt;200&lt;/span&gt;</code>
+                     <code>&lt;p&gt;满999减100&lt;/p&gt;</code>
+                     <code>&lt;/h1&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="coupons-right"&gt;</code>
+                     <code>&lt;dl&gt;</code>
+                     <code>&lt;dt&gt;全品牌抵用&lt;/dt&gt;</code>
+                     <code>&lt;dd&gt; &lt;label for=""&gt;适用范围：&lt;/label&gt;全品牌&lt;/dd&gt;</code>
+                     <code>&lt;dd&gt; &lt;label for=""&gt;有效期至：&lt;/label&gt;2015.03.12&lt;/dd&gt;</code>
+                     <code>&lt;dd&gt; &lt;label for=""&gt;券号：&lt;/label&gt;12345678912&lt;/dd&gt;</code>
+                     <code>&lt;/dl&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>MUI规范1.1 2016/03</p>
+</footer>
+<a href="javascript:;" class="scroll-top-btn">回到顶部</a>
+
+<script src="../js/sm.js"></script>
+<script src="../js/sm-extend.js"></script>
+<script>
+    $(window).scroll(function(){
+
+        $(".side-menu li").click(function(){
+            $(this).addClass("active");
+            if($(this).has("ul")){
+                $(this).children("ul").show("slow");
+                $(".side-menu li ul li").click(function(){
+                    $(this).addClass("active").siblings().removeClass("active");
+                })
+            }
+            $(this).siblings().removeClass("active");
+            $(this).siblings().children("ul").hide("slow");
+        })
+
+        var scrollTop = $(window).scrollTop();
+
+        if(scrollTop > 102 ){
+            $(".side-menu").css("position","fixed");
+        }
+        else{
+            $(".side-menu").css("position","relative");
+        }
+        if(scrollTop>400){
+            $(".scroll-top-btn").show();
+            $(".scroll-top-btn").click(function(e){
+                e.preventDefault();
+                $("html,body").animate({scrollTop:0},800)
+            })
+        }
+        else{
+            $(".scroll-top-btn").hide();
+        }
+
+    })
+    $(function() {
+        $(".swiper-container").swiper({
+            loop : true,
+            autoplay:5000,
+            pagination : '.swiper-pagination',
+        });
+    });
+</script>
+</body>
+</html>

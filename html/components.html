@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>UI组件</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="MUI规范"/>
+    <link rel="stylesheet" href="../css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/demo.css">
+    <!--<script src="../js/jquery-1.10.2.js"></script>-->
+    <!--<script src="../js/zepto.min.js"></script>-->
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="head-area clearfix">
+            <div class="fl"><h1><a href="/">MUI</a></h1></div>
+            <div class="fr"><a class="nav-toggle"></a>
+                <ol class="main-nav">
+                    <li><a href="components.html">基础组件</a></li>
+                    <li><a href="extends.html">扩展组件</a></li>
+                    <li><a href="customize.html">定制组件</a></li>
+                    <li><a href="extendJs.html">JS组件</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>基础组件</h1>
+        <p>简单易用，轻量快捷，为移动端服务的前端框架</p>
+    </div>
+</header>
+<div class="content">
+    <ul class="side-menu">
+        <li class="active">
+            <a href="#header">头部</a>
+        </li>
+        <li>
+            <a href="#footer">底部</a>
+        </li>
+        <li>
+            <a href="#font">文本</a>
+        </li>
+        <li>
+            <a href="#nowrap">文字截断</a>
+        </li>
+        <li>
+            <a href="#button">按钮</a>
+            <ul>
+                <li>
+                    <a href="#button">Button</a>
+                </li>
+                <li>
+                    <a href="#blockButton">Block Button</a>
+                </li>
+                <li>
+                    <a href="#differenrButton">Different Button</a>
+                </li>
+                <li>
+                    <a href="#outlinedButton">Outlined Button</a>
+                </li>
+                <li>
+                    <a href="#clearButton">Clear Button</a>
+                </li>
+                <li>
+                    <a href="#iconButton">Icon Button</a>
+                </li>
+                <li>
+                    <a href="#headerButton">Header Button</a>
+                </li>
+                <li>
+                    <a href="#buttonBar">Button Bar</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#tabs">工具栏</a>
+        </li>
+        <li>
+            <a href="#list">列表</a>
+            <ul>
+                <li>
+                    <a href="#ordinaryList">普通列表</a>
+                </li>
+                <li>
+                    <a href="#diverList">分栏列表</a>
+                </li>
+                <li>
+                    <a href="#iconList">带图标的列表</a>
+                </li>
+                <li>
+                    <a href="#avatarList">头像列表</a>
+                </li>
+                <li>
+                    <a href="#thumbnailList">缩略图列表</a>
+                </li>
+                <li>
+                    <a href="#largerList">大图列表</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#form">表单</a>
+            <ul>
+                <li>
+                    <a href="#ordinaryForm">基本表单</a>
+                </li>
+                <li>
+                    <a href="#inlineForm">内联标签表单</a>
+                </li>
+                <li>
+                    <a href="#stackedForm">堆叠标签表单</a>
+                </li>
+                <li>
+                    <a href="#headerForm">头部表单</a>
+                </li>
+                <li>
+                    <a href="#toggle">Toggle选择</a>
+                </li>
+                <li>
+                    <a href="#checkbox">多选框</a>
+                </li>
+                <li>
+                    <a href="#radio">单选框</a>
+                </li>
+                <li>
+                    <a href="#range">范围选择</a>
+                </li>
+                <li>
+                    <a href="#select">下拉选框</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#grid">网格</a>
+            <ul>
+                <li>
+                    <a href="#splitGrid">平分的网格</a>
+                </li>
+                <li>
+                    <a href="#widthGrid">指定宽度的网格</a>
+                </li>
+                <li>
+                    <a href="#offsetGrid">有偏移量的网格</a>
+                </li>
+                <li>
+                    <a href="#verticalGrid">纵向对齐的网格</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="components">
+            <div class="component" id="header">
+            <h2 class="component-title">头部</h2>
+            <h3 class="component-title-h3">Header</h3>
+            <p class="component-desc">Header是固定在屏幕顶部的组件。可以包含如标题和左右的功能按钮, 可以自定义颜色。</p>
+            <div class="box">
+                <div class="demo">
+                    <div class="bar bar-header bar-light">
+                        <h1 class="title">bar-light</h1>
+                    </div>
+                    <div class="bar bar-header bar-stable">
+                        <h1 class="title">bar-stable</h1>
+                    </div>
+                    <div class="bar bar-header bar-positive">
+                        <h1 class="title">bar-positive</h1>
+                    </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="bar bar-header bar-light"&gt;</code>
+                     <code>&lt;h1 class="title"&gt;bar-light&lt;/h1&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="bar bar-header bar-stable"&gt;</code>
+                     <code>&lt;h1 class="title"&gt;bar-stable&lt;/h1&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="bar bar-header bar-positive"&gt;</code>
+                     <code>&lt;h1 class="title"&gt;bar-positive&lt;/h1&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3">Sub Header</h3>
+            <p class="component-desc">Sub Header同样是固定在顶部，只是是在Header的下面，就算没有写Header这个，
+                Sub Header这个样式也会距离顶部有一个Header的距离。可以添加Header组件的颜色Class (<span class="red"> bar-stable,bar-positive</span> 等 )，给Sub Header添加背景色。</p>
+            <div class="box">
+                <div class="demo">
+                    <div class="bar bar-header">
+                        <h1 class="title">Header</h1>
+                    </div>
+                    <div class="bar bar-subheader">
+                        <h2 class="title">Sub Header</h2>
+                    </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="bar bar-header"&gt;</code>
+                     <code>&lt;h1 class="title"&gt;Header&lt;/h1&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="bar bar-subheader"&gt;</code>
+                     <code>&lt;h1 class="title"&gt;Sub Header&lt;/h1&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+        </div>
+
+            <div class="component" id="footer">
+            <h2 class="component-title">底部</h2>
+            <h3 class="component-title-h3">Footer</h3>
+            <p class="component-desc">Footer是固定在屏幕底部的组件。可以包含如标题和左右的功能按钮, 可以自定义颜色。</p>
+            <div class="box">
+                <div class="demo">
+                    <div class="bar bar-footer bar-light">
+                        <h1 class="title">bar-light</h1>
+                    </div>
+                    <div class="bar bar-footer bar-stable">
+                        <h1 class="title">bar-stable</h1>
+                    </div>
+                    <div class="bar bar-footer bar-positive">
+                        <h1 class="title">bar-positive</h1>
+                    </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="bar bar-footer bar-light"&gt;</code>
+                     <code>&lt;h1 class="title"&gt;bar-light&lt;/h1&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="bar bar-footer bar-stable"&gt;</code>
+                     <code>&lt;h1 class="title"&gt;bar-stable&lt;/h1&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="bar bar-footer bar-positive"&gt;</code>
+                     <code>&lt;h1 class="title"&gt;bar-positive&lt;/h1&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3">Sub Footer</h3>
+            <p class="component-desc">Sub Footer同样是固定在顶部，只是是在Footer的上面，就算没有写Footer这个，
+                Sub Footer这个样式也会距离底部有一个Footer的距离。可以添加Header组件的颜色Class (<span class="red"> bar-stable,bar-positive</span> 等 )，给Sub Footer添加背景色。</p>
+            <div class="box">
+                <div class="demo">
+                    <div class="bar bar-subfooter">
+                        <h2 class="title">Sub Footer</h2>
+                    </div>
+                    <div class="bar bar-footer">
+                        <h1 class="title">Footer</h1>
+                    </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="bar bar- footer"&gt;</code>
+                     <code>&lt;h1 class="title"&gt;Footer&lt;/h1&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="bar bar-subfooter"&gt;</code>
+                     <code>&lt;h1 class="title"&gt;Sub Footer&lt;/h1&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+        </div>
+        <div class="component" id="font">
+            <h2 class="component-title">文本</h2>
+            <p class="component-desc">基础文本样式</p>
+            <div class="box">
+                <div class="demo">
+                    <h1>我是标题一</h1>
+                    <h2>我是标题二</h2>
+                    <h3>我是标题三</h3>
+                    <h4>我是标题四</h4>
+                    <h5>我是标题五</h5>
+                    <h6>我是标题六</h6>
+                    <p>我是一个段落</p>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;h1&gt;我是标题一&lt;/h1&gt;</code>
+                     <code>&lt;h2&gt;我是标题二&lt;/h2&gt;</code>
+                     <code>&lt;h3&gt;我是标题三&lt;/h3&gt;</code>
+                     <code>&lt;h4&gt;我是标题四&lt;/h4&gt;</code>
+                     <code>&lt;h5&gt;我是标题五&lt;/h5&gt;</code>
+                     <code>&lt;h6&gt;我是标题六&lt;/h6&gt;</code>
+                     <code>&lt;p&gt;我是一个段落&lt;/p&gt;</code>
+                </pre>
+            </div>
+        </div>
+        <div class="component" id="nowrap">
+            <h2 class="component-title">文字截断</h2>
+            <h3 class="component-title-h3">一行文字截断</h3>
+            <div class="box">
+                <div class="demo">
+                    <p class="text-nowrap" style="width: 350px;">一行文字很长的话，超出的长度省略;一行文字很长的话，超出的长度省略;一行文字很长的话，超出的长度省略;一行文字很长的话，超出的长度省略;</div>
+                <pre class="highlight">
+                     <code>&lt;p&gt;一行文字很长的话，超出的长度省略;一行文字很长的话，超出的长度省略;一行文字很长的话，超出的长度省略;一行文字很长的话，超出的长度省略;&lt;/p&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3">两行文字截断</h3>
+            <div class="box">
+                <div class="demo">
+                    <p class="text-multi-nowrap" style="width: 350px;">一行文字很长的话，超出的长度省略;一行文字很长的话，超出的长度省略;一行文字很长的话，超出的长度省略;一行文字很长的话，超出的长度省略;</div>
+                <pre class="highlight">
+                     <code>&lt;p&gt;一行文字很长的话，超出的长度省略;一行文字很长的话，超出的长度省略;一行文字很长的话，超出的长度省略;一行文字很长的话，超出的长度省略;&lt;/p&gt;</code>
+                </pre>
+            </div>
+        </div>
+        <div class="component" id="button">
+            <h2 class="component-title">按钮</h2>
+            <h3 class="component-title-h3" id="button">Button</h3>
+            <p class="component-desc">button的默认情况是按照display: inline-block来显示，宽度是随其内部文字长度增长的。
+                有许多不同的显示样式。</p>
+            <div class="box">
+                <div class="demo">
+                    <button class="button button-light">button-light</button>
+                    <button class="button button-stable">button-stable</button>
+                    <button class="button button-positive">button-positive</button>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;button class="button button-light"&gt;button-light&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-stable"&gt;button-light&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-positive"&gt;button-light&lt;/button&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3" id="blockButton">Block Button</h3>
+            <p class="component-desc">想让button占满父元素宽度，需要加上 button-block 样式</p>
+            <div class="box">
+                <div class="demo">
+                    <button class="button button-block button-light">button-light</button>
+                    <button class="button button-block button-stable">button-stable</button>
+                    <button class="button button-block button-positive">button-positive</button>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;button class="button button-block button-light"&gt;button-light&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-block button-stable"&gt;button-light&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-block button-positive"&gt;button-light&lt;/button&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3" id="differentButton">Different Button</h3>
+            <p class="component-desc">控制button的大小，添加button-small使按钮变小，添加button-large使按钮变大。</p>
+            <div class="box">
+                <div class="demo">
+                    <button class="button button-small button-light">button-small</button>
+                    <button class="button button-stable">button-normal</button>
+                    <button class="button button-large button-positive">button-large</button>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;button class="button button-small button-light"&gt;button-small&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-stable"&gt;button-normal&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-large button-positive"&gt;button-large&lt;/button&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3" id="outlinedButton">Outlined Button</h3>
+            <p class="component-desc">添加button-outline使按钮只有边框。</p>
+            <div class="box">
+                <div class="demo">
+                    <button class="button button-outline button-light">button-light</button>
+                    <button class="button button-outline button-stable">button-stable</button>
+                    <button class="button button-outline button-positive">button-positive</button>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;button class="button button-outline button-light"&gt;button-light&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-outline button-stable"&gt;button-stable&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-outline button-positive"&gt;button-positive&lt;/button&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3" id="clearButton">Clear Button</h3>
+            <p class="component-desc">添加button-clear使按钮只显示文字，可以当链接。</p>
+            <div class="box">
+                <div class="demo">
+                    <button class="button button-clear button-light">button-light</button>
+                    <button class="button button-clear button-stable">button-stable</button>
+                    <button class="button button-clear button-positive">button-positive</button>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;button class="button button-clear button-light"&gt;button-light&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-clear button-stable"&gt;button-stable&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-clear button-positive"&gt;button-positive&lt;/button&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3" id="iconButton">Icon Button</h3>
+            <p class="component-desc">带图标的按钮，可以控制icon的位置。</p>
+            <div class="box">
+                <div class="demo">
+                    <p><button class="button button-clear button-positive icon-left iconfont icon-jiantou">返回</button></p>
+                    <p><button class="button button-positive icon-right iconfont icon-jiantou2">更多</button></p>
+                    <p><button class="button iconfont icon-ordinaryset"></button></p>
+                    <!--无背景的按钮-->
+                    <p><button class="button button-icon iconfont icon-ordinaryset"></button></p>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;button class="button button-clear button-positive icon-left iconfont icon-jiantou"&gt;返回&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-positive icon-right iconfont icon-jiantou2"&gt;更多&lt;/button&gt;</code>
+                     <code>&lt;button class="button iconfont icon-ordinaryset"&gt;&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-icon iconfont icon-ordinaryset"&gt;&lt;/button&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3" id="headerButton">Header Button</h3>
+            <p class="component-desc">放在header的button，注意button-outline样式和button-clear样式</p>
+            <div class="box">
+                <div class="demo">
+                    <div class="bar bar-header bar-light">
+                        <button class="button iconfont icon-jiantou"></button>
+                        <h1 class="title">bar-light</h1>
+                        <button class="button iconfont icon-ordinaryset"></button>
+                    </div>
+                    <div class="bar bar-header bar-positive">
+                        <button class="button button-icon iconfont icon-jiantou"></button>
+                        <h1 class="title">bar-light</h1>
+                        <button class="button button-icon iconfont icon-ordinaryset"></button>
+                    </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="bar bar-header bar-light"&gt;</code>
+                     <code>&lt;button class="button iconfont icon-jiantou"&gt;&lt;/button&gt;</code>
+                     <code>&lt;h1 class="title"&gt;bar-light&lt;/h1&gt;</code>
+                     <code>&lt;button class="button iconfont icon-ordinaryset"&gt;&lt;/button&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="bar bar-header bar-positive"&gt;</code>
+                     <code>&lt;button class="button button-icon iconfont icon-jiantou"&gt;&lt;/button&gt;</code>
+                     <code>&lt;h1 class="title"&gt;bar-light&lt;/h1&gt;</code>
+                     <code>&lt;button class="button button-icon iconfont icon-ordinaryset"&gt;&lt;/button&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3" id="buttonBar">Button bar</h3>
+            <p class="component-desc">按钮组，注意button-bar样式，可以与其他的icon组合</p>
+            <div class="box">
+                <div class="demo">
+                    <p>
+                    <div class="button-bar button-bar-inline">
+                        <button class="button">button1</button>
+                        <button class="button">button2</button>
+                        <button class="button">button3</button>
+                    </div>
+                    </p>
+                    <p>
+                        <div class="button-bar">
+                            <button class="button button-small">button1</button>
+                            <button class="button button-small">button2</button>
+                            <button class="button button-small">button3</button>
+                        </div>
+                    </p>
+                    <p>
+                    <div class="button-bar">
+                        <button class="button button-positive">button1</button>
+                        <button class="button button-positive">button2</button>
+                        <button class="button button-positive">button3</button>
+                    </div>
+                    </p>
+                    <p>
+                    <div class="button-bar button-bar-separate">
+                        <button class="button">button1</button>
+                        <button class="button">button2</button>
+                        <button class="button">button3</button>
+                    </div>
+                    </p>
+                    <p>
+                    <div class="button-bar button-bar-separate">
+                        <button class="button iconfont icon-jiantou">button1</button>
+                        <button class="button iconfont icon-beizhu">button2</button>
+                        <button class="button iconfont icon-jiantou">button3</button>
+                    </div>
+                    </p>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="button-bar button-bar-inline"&gt;</code>
+                     <code>&lt;button class="button"&gt;button1&lt;/button&gt;</code>
+                     <code>&lt;button class="button"&gt;button2&lt;/button&gt;</code>
+                     <code>&lt;button class="button"&gt;button3&lt;/button&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <br/>
+                     <code>&lt;div class="button-bar"&gt;</code>
+                     <code>&lt;button class="button button-small"&gt;button1&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-small"&gt;button2&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-small"&gt;button3&lt;/button&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <br/>
+                     <code>&lt;div class="button-bar"&gt;</code>
+                     <code>&lt;button class="button button-positive"&gt;button1&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-positive"&gt;button2&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-positive"&gt;button3&lt;/button&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <br/>
+                     <code>&lt;div class="button-bar button-bar-separate"&gt;</code>
+                     <code>&lt;button class="button"&gt;button1&lt;/button&gt;</code>
+                     <code>&lt;button class="button"&gt;button2&lt;/button&gt;</code>
+                     <code>&lt;button class="button"&gt;button3&lt;/button&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <br/>
+                     <code>&lt;div class="button-bar button-bar-separate"&gt;</code>
+                     <code>&lt;button class="button iconfont icon-jiantou"&gt;button1&lt;/button&gt;</code>
+                     <code>&lt;button class="button  iconfont icon-beizhu"&gt;button2&lt;/button&gt;</code>
+                     <code>&lt;button class="button iconfont icon-jiantou"&gt;button3&lt;/button&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+            </div>
+            <div class="component" id="tabs">
+                <h2 class="component-title">工具栏</h2>
+                <p class="component-desc">工具栏是水平排列的button或link，用于切换视图，是一种很常用的导航方法</p>
+                <h3 class="component-title-h3">只有文案</h3>
+                <div class="box">
+                    <div class="demo">
+                        <div class="tabs">
+                            <a href="#" class="tab-item">tab1</a>
+                            <a href="#" class="tab-item">tab2</a>
+                            <a href="#" class="tab-item">tab3</a>
+                        </div>
+                    </div>
+                <pre class="highlight">
+                     <code>&lt;div class="tabs"&gt;</code>
+                     <code>&lt;a href="#" class="tab-item"&gt;tab1&lt;/a&gt;</code>
+                     <code>&lt;a href="#" class="tab-item"&gt;tab2&lt;/a&gt;</code>
+                     <code>&lt;a href="#" class="tab-item"&gt;tab3&lt;/a&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+                </div>
+                <h3 class="component-title-h3">只有图标</h3>
+                <p class="component-desc">工具栏的背景色可自定义。</p>
+                <div class="box">
+                    <div class="demo">
+                        <div class="tabs tabs-positive">
+                            <a href="#" class="tab-item">
+                                <i class="iconfont icon-home"></i>
+                            </a>
+                            <a href="#" class="tab-item">
+                                <i class="iconfont icon-my"></i>
+                            </a>
+                            <a href="#" class="tab-item">
+                                <i class="iconfont icon-gouwuche1"></i>
+                            </a>
+                        </div>
+                    </div>
+                <pre class="highlight">
+                     <code>&lt;div class="tabs tabs-positive"&gt;</code>
+                     <code>&lt;a href="#" class="tab-item"&gt;&lt;i class="iconfont icon-home"&gt;&lt;/i&gt;&lt;/a&gt;</code>
+                     <code>&lt;a href="#" class="tab-item"&gt;&lt;i class="iconfont icon-my"&gt;&lt;/i&gt;&lt;/a&gt;</code>
+                     <code>&lt;a href="#" class="tab-item"&gt;&lt;i class="iconfont icon-gouwuche1"&gt;&lt;/i&gt;&lt;/a&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+                </div>
+                <h3 class="component-title-h3">图标上，文字下</h3>
+                <div class="box">
+                    <div class="demo">
+                        <div class="tabs tabs-icon-top tabs-positive">
+                            <a href="#" class="tab-item">
+                                <i class="iconfont icon-home"></i>
+                                首页
+                            </a>
+                            <a href="#" class="tab-item">
+                                <i class="iconfont icon-my"></i>
+                                我的
+                            </a>
+                            <a href="#" class="tab-item">
+                                <i class="iconfont icon-gouwuche1"></i>
+                                购物车
+                            </a>
+                        </div>
+                    </div>
+                <pre class="highlight">
+                     <code>&lt;div class="tabs tabs-icon-top tabs-positive"&gt;</code>
+                     <code>&lt;a href="#" class="tab-item"&gt;&lt;i class="iconfont icon-home"&gt;&lt;/i&gt;首页&lt;/a&gt;</code>
+                     <code>&lt;a href="#" class="tab-item"&gt;&lt;i class="iconfont icon-my"&gt;&lt;/i&gt;我的&lt;/a&gt;</code>
+                     <code>&lt;a href="#" class="tab-item"&gt;&lt;i class="iconfont icon-gouwuche1"&gt;&lt;/i&gt;购物车&lt;/a&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+                </div>
+            </div>
+            <div class="component" id="list">
+                <h2 class="component-title">列表</h2>
+                <h3 class="component-title-h3" id="ordinaryList">普通列表</h3>
+                <div class="box">
+                    <div class="demo">
+                        <ul class="list">
+                            <li class="item">item1</li>
+                            <li class="item">item2</li>
+                            <li class="item">item3</li>
+                            <li class="item">item4</li>
+                            <li class="item">item5</li>
+                        </ul>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;ul class="list"&gt;</code>
+                        <code>&lt;li class="item"&gt;item1&lt;/li&gt;</code>
+                        <code>&lt;li class="item"&gt;item2&lt;/li&gt;</code>
+                        <code>&lt;li class="item"&gt;item3&lt;/li&gt;</code>
+                        <code>&lt;li class="item"&gt;item4&lt;/li&gt;</code>
+                        <code>&lt;li class="item"&gt;item5&lt;/li&gt;</code>
+                        <code>&lt;/ul&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="diverList">分栏列表</h3>
+                <!--<p class="component-desc">工具栏的背景色可自定义。</p>-->
+                <div class="box">
+                    <div class="demo">
+                        <div class="list">
+                            <div class="item item-divider">
+                                水果
+                            </div>
+                            <a href="#" class="item">香蕉</a>
+                            <a href="#" class="item">苹果</a>
+                            <a href="#" class="item">草莓</a>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;div class="item item-divider"&gt;水果&lt;/li&gt;</code>
+                        <code>&lt;a class="item"&gt;香蕉&lt;/li&gt;</code>
+                        <code>&lt;a class="item"&gt;苹果&lt;/li&gt;</code>
+                        <code>&lt;a class="item"&gt;草莓&lt;/li&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="iconList">带图标的列表</h3>
+                <p class="component-desc">带图标的列表，通过i标签添加icon到item中，通过item-icon-left或item-icon-right指定icon在左边还是右边。</p>
+                <div class="box">
+                    <div class="demo">
+                        <div class="list">
+                            <a href="#" class="item item-icon-left">
+                                <i class="iconfont icon-shangpin"></i>
+                                店铺
+                            </a>
+                            <a href="#" class="item item-icon-left">
+                                <i class="iconfont icon-huiyuan01"></i>
+                                会员
+                                <span class="badge badge-assertive">11</span>
+                            </a>
+                            <a href="#" class="item item-icon-left">
+                                <i class="iconfont icon-dingdan"></i>
+                                订单
+                                <span class="item-note">999</span>
+                            </a>
+                            <a href="#" class="item item-icon-left item-icon-right">
+                                <i class="iconfont icon-kefu"></i>
+                                客服
+                                <i class="iconfont icon-dianhua"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;a href="#" class="item item-icon-left"&gt;</code>
+                        <code>&lt;i class="iconfont icon-shangpin"&gt;&lt;/i&gt;</code>
+                        <code>店铺</code>
+                        <code>&lt;/a&gt;</code>
+                        <code>&lt;a href="#" class="item item-icon-left"&gt;</code>
+                        <code>&lt;i class="iconfont icon-huiyuan01"&gt;&lt;/i&gt;</code>
+                        <code>会员</code>
+                        <code>&lt;span class="badge badge-assertive"&gt;11&lt;/span&gt;</code>
+                        <code>&lt;/a&gt;</code>
+                        <code>&lt;a href="#" class="item item-icon-left"&gt;</code>
+                        <code>&lt;i class="iconfont icon-dingdan"&gt;&lt;/i&gt;</code>
+                        <code>订单</code>
+                        <code>&lt;span class="item-note"&gt;999&lt;/span&gt;</code>
+                        <code>&lt;/a&gt;</code>
+                        <code>&lt;a href="#" class="item item-icon-left item-icon-right"&gt;</code>
+                        <code>&lt;i class="iconfont icon-kefu"&gt;&lt;/i&gt;</code>
+                        <code>客服</code>
+                        <code>&lt;i class="iconfont icon-dianhua"&gt;&lt;/i&gt;</code>
+                        <code>&lt;/a&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="avatarList">头像列表</h3>
+                <div class="box">
+                    <div class="demo">
+                        <div class="list">
+                            <div class="item item-avatar">
+                                <img src="http://placehold.it/100x100/ccc/&text=avatar" alt=""/>
+                                <h2>宋仲基</h2>
+                                <p>宋仲基，男，演员，出演太阳的后裔等脍炙人口的电视剧。</p>
+                            </div>
+                            <div class="item item-avatar">
+                                <img src="http://placehold.it/100x100/ccc/&text=avatar" alt=""/>
+                                <h2>宋仲基</h2>
+                                <p>宋仲基，男，演员，出演太阳的后裔等脍炙人口的电视剧。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;div class="item item-avatar"&gt;</code>
+                        <code>&lt;img src="http://placehold.it/100x100/ccc/&text=avatar" alt=""/&gt;</code>
+                        <code>&lt;h2&gt;宋仲基&lt;/h2&gt;</code>
+                        <code>&lt;p&gt;宋仲基，男，演员，出演太阳的后裔等脍炙人口的电视剧。&lt;/p&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="thumbnailList">缩略图列表</h3>
+                <div class="box">
+                    <div class="demo">
+                        <div class="list">
+                            <div class="item item-thumbnail-left">
+                                <img src="http://placehold.it/200x200/ccc/&text=thumbnail" alt=""/>
+                                <h2>宋仲基</h2>
+                                <p>宋仲基，男，演员，出演太阳的后裔等脍炙人口的电视剧。</p>
+                            </div>
+                            <div class="item item-thumbnail-left">
+                                <img src="http://placehold.it/200x200/ccc/&text=thumbnail" alt=""/>
+                                <h2>宋仲基</h2>
+                                <p>宋仲基，男，演员，出演太阳的后裔等脍炙人口的电视剧。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;div class="item item-thumbnail"&gt;</code>
+                        <code>&lt;img src="http://placehold.it/100x100/ccc/&text=thumbnail" alt=""/&gt;</code>
+                        <code>&lt;h2&gt;宋仲基&lt;/h2&gt;</code>
+                        <code>&lt;p&gt;宋仲基，男，演员，出演太阳的后裔等脍炙人口的电视剧。&lt;/p&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="largerList">大图列表</h3>
+                <div class="box">
+                    <div class="demo">
+                        <div class="list clearfix">
+                            <div class="item item-larger">
+                                <img src="http://placehold.it/200x200/ccc/&text=larger" alt=""/>
+                                <h2>宋仲基</h2>
+                                <p>宋仲基，男，演员，出演太阳的后裔等脍炙人口的电视剧。</p>
+                            </div>
+                            <div class="item item-larger">
+                                <img src="http://placehold.it/200x200/ccc/&text=larger" alt=""/>
+                                <h2>宋仲基</h2>
+                                <p>宋仲基，男，演员，出演太阳的后裔等脍炙人口的电视剧。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;div class="item item-thumbnail"&gt;</code>
+                        <code>&lt;img src="http://placehold.it/100x100/ccc/&text=thumbnail" alt=""/&gt;</code>
+                        <code>&lt;h2&gt;宋仲基&lt;/h2&gt;</code>
+                        <code>&lt;p&gt;宋仲基，男，演员，出演太阳的后裔等脍炙人口的电视剧。&lt;/p&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                     </pre>
+                </div>
+            </div>
+            <div class="component" id="form">
+                <h2 class="component-title">表单</h2>
+                <h3 class="component-title-h3" id="ordinaryForm">基本表单</h3>
+                <div class="box">
+                    <div class="demo">
+                        <div class="list">
+                            <label class="item item-input">
+                                <input type="text" placeholder="用户名"/>
+                            </label>
+                            <label class="item item-input">
+                                <input type="text" placeholder="密码"/>
+                            </label>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;label class="item item-input"&gt;</code>
+                        <code>&lt;input type="text" placeholder="用户名"/&gt;</code>
+                        <code>&lt;/label&gt;</code>
+                        <code>&lt;label class="item item-input"&gt;</code>
+                        <code>&lt;input type="text" placeholder="密码"/&gt;</code>
+                        <code>&lt;/label&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="inlineForm">内联标签表单</h3>
+                <div class="box">
+                    <div class="demo">
+                        <div class="list">
+                            <label class="item item-input">
+                                <span class="input-label">用户名</span>
+                                <input type="text" value="宋仲基"/>
+                            </label>
+                            <label class="item item-input">
+                                <span class="input-label">密码</span>
+                                <input type="text" value="宋仲基123"/>
+                            </label>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;label class="item item-input"&gt;</code>
+                        <code>&lt;span class="input-label"&gt;用户名&lt;/span&gt;</code>
+                        <code>&lt;input type="text" value="宋仲基"/&gt;</code>
+                        <code>&lt;/label&gt;</code>
+                        <code>&lt;label class="item item-input"&gt;</code>
+                        <code>&lt;span class="input-label"&gt;密码&lt;/span&gt;</code>
+                        <code>&lt;input type="text" value="宋仲基123"/&gt;</code>
+                        <code>&lt;/label&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="stackedForm">堆叠标签表单</h3>
+                <div class="box">
+                    <div class="demo">
+                        <div class="list" style="background: #fff;">
+                            <label class="item item-input item-stacked-label">
+                                <span class="input-label">用户名</span>
+                                <input type="text" placeholder="宋仲基"/>
+                            </label>
+                            <label class="item item-input item-stacked-label">
+                                <span class="input-label">密码</span>
+                                <input type="text" placeholder="宋仲基123"/>
+                            </label>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;label class="item item-input item-stacked-label"&gt;</code>
+                        <code>&lt;span class="input-label"&gt;用户名&lt;/span&gt;</code>
+                        <code>&lt;input type="text" placeholder="宋仲基"/&gt;</code>
+                        <code>&lt;/label&gt;</code>
+                        <code>&lt;label class="item item-input item-stacked-label"&gt;</code>
+                        <code>&lt;span class="input-label"&gt;密码&lt;/span&gt;</code>
+                        <code>&lt;input type="text" placeholder="宋仲基123"/&gt;</code>
+                        <code>&lt;/label&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="headerForm">头部表单</h3>
+                <div class="box">
+                    <div class="demo">
+                        <div class="bar bar-header item-input-inset">
+                            <label class="item-input-wrapper">
+                                <i class="iconfont icon-search placeholder-icon"></i>
+                                <input type="text" placeholder="search"/>
+                            </label>
+                            <button class="button button-clear">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="bar bar-header item-input-inset"&gt;</code>
+                        <code>&lt;label class="item-input-wrapper"&gt;</code>
+                        <code>&lt;i class="iconfont icon-search placeholder-icon"&gt;&lt;/i&gt;</code>
+                        <code>&lt;input type="text" placeholder="search"/&gt;</code>
+                        <code>&lt;/label&gt;</code>
+                        <code>&lt;button class="button button-clear"&gt;</code>
+                        <code>Cancel&lt;/button&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="toggle">Toggle选择</h3>
+                <p class="component-desc">Toggle选择是一种比较容易操作的多选框，类似于checkbox，在表现上更容易操作。</p>
+                <div class="box">
+                    <div class="demo">
+                        <div class="list">
+                            <div class="item item-toggle">
+                                MUI
+                                <label class="toggle">
+                                    <input type="checkbox" checked/>
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="item item-toggle">
+                                CSS
+                                <label class="toggle toggle-positive">
+                                    <input type="checkbox"/>
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;div class="item item-toggle"&gt;MUI</code>
+                        <code>&lt;label class="toggle"&gt;</code>
+                        <code>&lt;input type="checkbox" checked/&gt;</code>
+                        <code>&lt;div class="track"&gt;</code>
+                        <code>&lt;div class="handle"&gt;&lt;/div&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                        <code>&lt;/label&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                        <code>&lt;div class="item item-toggle"&gt;MUI</code>
+                        <code>&lt;label class="toggle toggle-positive"&gt;</code>
+                        <code>&lt;input type="checkbox" /&gt;</code>
+                        <code>&lt;div class="track"&gt;</code>
+                        <code>&lt;div class="handle"&gt;&lt;/div&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                        <code>&lt;/label&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="checkbox">多选框</h3>
+                <p class="component-desc">多选框是一种常见的html组件。</p>
+                <div class="box">
+                    <div class="demo">
+                        <div class="list">
+                            <div class="item item-checkbox">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked/>
+                                </label>
+                                 多选1
+                            </div>
+                            <div class="item item-checkbox">
+                                <label class="checkbox">
+                                    <input type="checkbox"/>
+                                </label>
+                                多选2
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;div class="item item-checkbox"&gt;</code>
+                        <code>&lt;label class="checkbox"&gt;</code>
+                        <code>&lt;input type="checkbox" checked/&gt;</code>
+                        <code>&lt;/label&gt;多选1</code>
+                        <code>&lt;/div&gt;</code>
+                        <code>&lt;div class="item item-checkbox"&gt;</code>
+                        <code>&lt;label class="checkbox"&gt;</code>
+                        <code>&lt;input type="checkbox"/&gt;</code>
+                        <code>&lt;/label&gt;多选2</code>
+                        <code>&lt;/div&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="radio">单选框</h3>
+                <!--<p class="component-desc">多选框是一种常见的html组件。</p>-->
+                <div class="box">
+                    <div class="demo">
+                        <div class="list">
+                            <label class="item item-radio">
+                                <input type="radio" name="group" value="苹果"/>
+                                <div class="radio-content">
+                                    <div class="item-content">
+                                        苹果
+                                    </div>
+                                    <i class="radio-icon iconfont icon-weibiaoti20"></i>
+                                </div>
+                            </label>
+                            <label class="item item-radio">
+                                <input type="radio" name="group" value="香蕉" checked>
+                                <div class="radio-content">
+                                    <div class="item-content">
+                                        香蕉
+                                    </div>
+                                    <i class="radio-icon iconfont icon-weibiaoti20"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;label class="item item-radio"&gt;</code>
+                        <code>&lt;input type="radio" name="group" value="苹果"/&gt;</code>
+                        <code>&lt;div class="radio-content"&gt;</code>
+                        <code>&lt;div class="item-content"&gt;</code>
+                        <code>苹果&lt;/div&gt;</code>
+                        <code>&lt;i class="radio-icon iconfont icon-weibiaoti20"&gt;&lt;/i&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                        <code>&lt;/label&gt;</code>
+                        <code>&lt;label class="item item-radio"&gt;</code>
+                        <code>&lt;input type="radio" name="group" value="苹果"/&gt;</code>
+                        <code>&lt;div class="radio-content"&gt;</code>
+                        <code>&lt;div class="item-content"&gt;</code>
+                        <code>香蕉&lt;/div&gt;</code>
+                        <code>&lt;i class="radio-icon iconfont icon-weibiaoti20"&gt;&lt;/i&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                        <code>&lt;/label&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="range">范围选择</h3>
+                <p class="component-desc">Range组件用于在某个范围内选择值。</p>
+                <div class="box">
+                    <div class="demo">
+                        <div class="list">
+                            <div class="item range range-positive">
+                                <i class="iconfont icon-biyan"></i>
+                                <input type="range" name="volume" min="0" max="100" value="38"/>
+                                <i class="iconfont icon-eyes"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;div class="item range range-positive"&gt;</code>
+                        <code>&lt;i class="iconfont icon-biyan"&gt;&lt;/i&gt;</code>
+                        <code>&lt;input type="range" name="volume" min="0" max="100" value="38"/&gt;</code>
+                        <code>&lt;i class="iconfont icon-eyes"&gt;&lt;/i&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                     </pre>
+                </div>
+                <h3 class="component-title-h3" id="select">下拉选框</h3>
+                <p class="component-desc">下拉框用于在多个候选项中选择一个值，不同的浏览器表现形式不一样。</p>
+                <div class="box">
+                    <div class="demo">
+                        <div class="list">
+                            <label class="item item-input item-select">
+                                <div class="input-label">水果</div>
+                                <select>
+                                    <option>苹果</option>
+                                    <option>橘子</option>
+                                    <option>香蕉</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <pre class="highlight">
+                        <code>&lt;div class="list"&gt;</code>
+                        <code>&lt;label class="item item-input item-select"&gt;</code>
+                        <code>&lt;div class="input-label"&gt;水果&lt;/div&gt;</code>
+                        <code>&lt;select&gt;</code>
+                        <code>&lt;option&gt;苹果&lt;/option&gt;</code>
+                        <code>&lt;option&gt;橘子&lt;/option&gt;</code>
+                        <code>&lt;option&gt;香蕉&lt;/option&gt;</code>
+                        <code>&lt;/select&gt;</code>
+                     </pre>
+                </div>
+            </div>
+            <div class="component" id="grid">
+                <h2 class="component-title">网格系统</h2>
+                <h3 class="component-title-h3" id="splitGrid">平分的网格</h3>
+                <!--<p class="component-desc">Header是固定在屏幕顶部的组件。可以包含如标题和左右的功能按钮, 可以自定义颜色。</p>-->
+                <div class="box">
+                    <div class="demo">
+                        <div class="row">
+                            <div class="col"><div class="col-demo">col</div></div>
+                            <div class="col"><div class="col-demo">col</div></div>
+                            <div class="col"><div class="col-demo">col</div></div>
+                            <div class="col"><div class="col-demo">col</div></div>
+                        </div>
+                    </div>
+                <pre class="highlight">
+                     <code>&lt;div class="row"&gt;</code>
+                     <code>&lt;div class="col"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+                </div>
+                <h3 class="component-title-h3" id="widthGrid">指定宽度的网格</h3>
+                <!--<p class="component-desc">Header是固定在屏幕顶部的组件。可以包含如标题和左右的功能按钮, 可以自定义颜色。</p>-->
+                <div class="box">
+                    <div class="demo">
+                        <div class="row">
+                            <div class="col col-50"><div class="col-demo">col</div></div>
+                            <div class="col"><div class="col-demo">col</div></div>
+                            <div class="col"><div class="col-demo">col</div></div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-20"><div class="col-demo">col</div></div>
+                            <div class="col col-50"><div class="col-demo">col</div></div>
+                            <div class="col col-30"><div class="col-demo">col</div></div>
+                        </div>
+                    </div>
+                <pre class="highlight">
+                     <code>&lt;div class="row"&gt;</code>
+                     <code>&lt;div class="col col-50"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="row"&gt;</code>
+                     <code>&lt;div class="col col-20"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col col-50"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col col-30"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+                </div>
+                <h3 class="component-title-h3" id="offsetGrid">有偏移量的网格</h3>
+                <!--<p class="component-desc">Header是固定在屏幕顶部的组件。可以包含如标题和左右的功能按钮, 可以自定义颜色。</p>-->
+                <div class="box">
+                    <div class="demo">
+                        <div class="row">
+                            <div class="col col-33 col-offset-33"><div class="col-demo">col</div></div>
+                            <div class="col"><div class="col-demo">col</div></div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-20"><div class="col-demo">col</div></div>
+                            <div class="col col-20 col-offset-25"><div class="col-demo">col</div></div>
+                            <div class="col"><div class="col-demo">col</div></div>
+                        </div>
+                    </div>
+                <pre class="highlight">
+                     <code>&lt;div class="row"&gt;</code>
+                     <code>&lt;div class="col col-33 col-offset-33"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="row"&gt;</code>
+                     <code>&lt;div class="col col-20"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col col-20 col-offset-25"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+                </div>
+                <h3 class="component-title-h3" id="verticalGrid">纵向对齐的网格</h3>
+                <!--<p class="component-desc">Header是固定在屏幕顶部的组件。可以包含如标题和左右的功能按钮, 可以自定义颜色。</p>-->
+                <div class="box">
+                    <div class="demo">
+                        <div class="row">
+                            <div class="col col-top"><div class="col-demo">col</div></div>
+                            <div class="col col-center"><div class="col-demo">col</div></div>
+                            <div class="col col-bottom"><div class="col-demo">col</div></div>
+                            <div class="col"><div class="col-demo">col-1<br />col-2<br />col-3<br />col-4</div></div>
+                        </div>
+                        <div class="row row-center">
+                            <div class="col"><div class="col-demo">col</div></div>
+                            <div class="col"><div class="col-demo">col</div></div>
+                            <div class="col"><div class="col-demo">col</div></div>
+                            <div class="col"><div class="col-demo">col-1<br />col-2<br />col-3<br />col-4</div></div>
+                        </div>
+
+                    </div>
+                <pre class="highlight">
+                     <code>&lt;div class="row"&gt;</code>
+                     <code>&lt;div class="col col-33 col-offset-33"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="row"&gt;</code>
+                     <code>&lt;div class="col col-20"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col col-20 col-offset-25"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;div class="col"&gt;&lt;div class="col-demo"&gt;col&lt;/div&gt;&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>MUI规范1.1 2016/03</p>
+</footer>
+<a href="javascript:;" class="scroll-top-btn">回到顶部</a>
+
+<script src="../js/jquery.min.js"></script>
+<script>
+    $(window).scroll(function(){
+
+        $(".side-menu li").click(function(){
+            $(this).addClass("active");
+            if($(this).has("ul")){
+                $(this).children("ul").show("slow");
+                $(".side-menu li ul li").click(function(){
+                    $(this).addClass("active").siblings().removeClass("active");
+                })
+            }
+            $(this).siblings().removeClass("active");
+            $(this).siblings().children("ul").hide("slow");
+        })
+
+        var scrollTop = $(window).scrollTop();
+        console.log(scrollTop);
+
+        if(scrollTop > 102 ){
+            $(".side-menu").css("position","fixed");
+        }
+        else{
+            $(".side-menu").css("position","relative");
+        }
+        if(scrollTop>400){
+            $(".scroll-top-btn").show();
+            $(".scroll-top-btn").click(function(e){
+                e.preventDefault();
+                $("html,body").animate({scrollTop:0},800)
+            })
+        }
+        else{
+            $(".scroll-top-btn").hide();
+        }
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+/* 购物车输入数量组件 */
+.quantity {
+  width: 110px;
+  height: 27px;
+  line-height: 26px;
+}
+.quantity a {
+  float: left;
+  display: block;
+  width: 25px;
+  height: 25px;
+  line-height: 23px;
+  background-color: #fff;
+  border: 1px solid $border-default-color;
+  text-align: center;
+  color: $positive;
+  font-size: 10px;
+  @include border-radius(50%);
+}
+.quantity a.disabled {
+  color: #ddd;
+  background: #f9f9f9;
+}
+.quantity input {
+  margin: 0px 7px;
+  display: block;
+  //padding-right: 0;
+  padding: 2px 2px 1px;
+  float: left;
+  width: 45px;
+  height: 25px;
+  border: 1px solid $border-default-color;
+  border-radius: 0 !important;
+  text-align: center;
+  color: #666;
+}
+.quantity input[disabled] {
+  color: #999;
+  background: #fff;
+}

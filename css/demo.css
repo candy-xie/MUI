@@ -1,0 +1,233 @@
+@charset "UTF-8";
+html{
+  overflow: auto;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", SimSun, sans-serif;
+  font-size: 14px;
+  background: #fff;
+  transition: background 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  overflow: auto;
+  position: static;
+}
+.fr{
+  float: right;
+}
+.fl{
+  float: left;
+}
+
+/* 头部  开始*/
+header {
+  width: 100%;
+  color: #fff;
+  background: rgba(56, 126, 245, 0.9);
+}
+.container{
+  width: 1120px;
+  margin: 0 auto;
+  padding: 25px 0;
+}
+header h1:first-child {
+  margin-top: .5rem;
+  color: #fff;
+  font-size: 30px;
+  /*font-weight: bold;*/
+}
+header p{
+  font-size: 16px;
+}
+.header{
+  /*border-bottom: 1px solid rgba(255,255,255,.15);*/
+  background: #fff;
+}
+.head-area{
+  margin: 0 auto;
+  padding: 10px 0;
+  width: 1120px;
+}
+.head-area h1:first-child{
+  margin: 0;
+  font-weight: 300;
+}
+.head-area a{
+  color: rgb(75, 138, 246);
+}
+.main-nav {
+  list-style-position: inside;
+  margin: auto 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 36px;
+}
+.main-nav li {
+  display: block;
+  float: left;
+}
+.main-nav li a {
+  display: block;
+  padding: 0 18px;
+}
+/* 头部  结束*/
+/* 底部  开始*/
+footer {
+  position: relative;
+  width: 100%;
+  color: #fff;
+  background: #2E3E4E;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px 0;
+  border-top: 1px solid #2d6ba9;
+  clear: both;
+  z-index: 1;
+}
+footer p{
+  margin-top: .5rem;
+}
+
+
+/*content*/
+.content{
+  position: relative;
+  min-height: 800px;
+  width: 1160px;
+  margin: 0 auto;
+  padding: 20px;
+}
+/*sideMenu*/
+.side-menu{
+  float: left;
+  width: 150px;
+  position: relative;
+  top: 50px;
+  max-height: 100vh;
+  overflow: auto;
+  padding-bottom: 50px;
+}
+.side-menu li{
+  display: block;
+  padding: 5px 0;
+}
+.side-menu a,.side-menu li.active ul li a,.side-menu li:hover ul li a{
+  color: #666;
+}
+.side-menu li:hover a,.side-menu li ul li:hover a{
+  color: #444;
+}
+.side-menu li.active a,.side-menu li ul li.active a{
+  color: rgb(75, 138, 246);
+}
+.side-menu li ul{
+  display: none;
+  padding-left: 8px;
+}
+.components{
+  width: 920px;
+  margin-left: 200px;
+}
+.component-title{
+  font-size: 25px;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0;
+  margin: 30px 0 !important;
+  font-weight: 400;
+  color: #222;
+}
+.component-title .link{
+  font-size: 20px;
+  padding-left: 10px;
+}
+.component-title-h3{
+  color: #555;
+  font-weight: 400;
+  font-size: 20px;
+}
+.component-title-h3 .link{
+  font-size: 18px;
+  padding-left: 10px;
+}
+.component-desc{
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+.component-desc .red{
+  color: red;
+}
+.component .demo{
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 50px 30px 30px;
+  background-color: #F1F0F0;
+  position: relative;
+}
+.component .demo .bar{
+  margin-bottom: 15px;
+  position: initial;
+}
+.component .demo .bar-subheader{
+  margin-top: -15px;
+}
+.component .demo .bar-subfooter{
+  margin-bottom: 0;
+}
+.component .highlight{
+  font-size: 13px;
+  line-height: 0;
+  background-color: #fff;
+  padding: 22px 12px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: auto;
+  white-space: pre;
+  z-index: -1;
+  margin-top: -10px;
+}
+.component code,.component .code{
+  display: block;
+  font-family: monospace;
+  margin: 0;
+  color: #657b83;
+  padding: 2px 10px;
+  line-height: 18px;
+  white-space: normal;
+}
+.scroll-top-btn{
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  z-index: 2;
+  padding: 15px 20px;
+  color: rgb(75, 138, 246);
+  border: 1px solid rgb(75, 138, 246);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  /*background: #fff;*/
+}
+.scroll-top-btn:hover{
+  background: rgb(75, 138, 246);
+  color: #fff;
+  transition: all .5s;
+}
+.component .demo .tabs{
+  position: static;
+}
+.component .demo .col-demo{
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background: #f7f7f7;
+  text-align: center;
+}
+.swiper-container {
+  height: 10rem;
+}
+.swiper-container .swiper-slide img{
+  height: 100%;
+}
+.swiper-slide a{
+  height: 100%;
+}

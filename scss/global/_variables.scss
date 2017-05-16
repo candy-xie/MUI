@@ -1,0 +1,195 @@
+
+// Type
+// --------------------------------------------------
+$font-family-default: "Helvetica Neue", Helvetica, sans-serif;
+$font-size-default: 0.7rem;
+$font-weight: 500;
+$font-weight-light: 400;
+$line-height-default: 1.05rem;
+$line-height-base:                1.428571429 !default; // 20/14
+$line-height-computed:            floor($font-size-default * $line-height-base) !default; // ~20px
+
+
+//img
+$img-path: "../img";
+
+
+// Colors
+// -------------------------------
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$assertive:                       #ef473a !default;
+
+
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 20%) !default; // #333
+$gray-dark:              lighten($gray-base, 33.5%) !default;   // #555
+$gray:                   lighten($gray-base, 40%) !default; // #666
+$gray-light:             lighten($gray-base, 60%) !default; // #999
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+//清除颜色
+$color-clear: transparent !default; //transparent
+
+$color-split: #eee;  //分割线的颜色
+
+//链接色
+$link: $positive; //链接色有可能不同于主色
+
+
+// Bars
+// --------------------------------------------------
+
+$bar-base-height:  2.2rem;
+$bar-tab-height:   2.5rem;
+$tabs-height:   2.45rem;
+$bar-side-spacing: 0.5rem;
+$bar-footer-height:               $bar-base-height !default;
+$bar-subheader-height:            $bar-base-height !default;
+$bar-subfooter-height:            $bar-base-height !default;
+
+$bar-title-font-size:             0.85rem !default;
+$bar-padding:            5px !default;
+$bar-transparency:                1 !default;
+$tabs-striped-border-width:       2px !default;
+
+// Cards
+// --------------------------------------------------
+
+$card-bg: #fff;
+
+
+// Buttons
+// --------------------------------------------------
+
+//$button-font-size: 0.6rem;
+// Buttons
+// -------------------------------
+
+$button-color:                    #222 !default;
+$button-block-margin:             .5rem !default;
+$button-clear-padding:            .3rem !default;
+$button-border-radius:            .2rem !default;
+$button-border-width:             1px !default;
+
+$button-font-size:                .8rem !default;
+$button-height:                   2.1rem !default;
+$button-padding:                  .6rem !default;
+$button-icon-size:                1.2rem !default;
+
+$button-large-font-size:          1rem !default;
+$button-large-height:             2.7rem !default;
+$button-large-padding:            .8rem !default;
+$button-large-icon-size:          1.6rem !default;
+
+$button-small-font-size:          .6rem !default;
+$button-small-height:             1.4rem !default;
+$button-small-padding:            .2rem !default;
+$button-small-icon-size:          .8rem !default;
+
+$button-bar-button-font-size:     .65rem !default;
+$button-bar-button-height:        1.6rem !default;
+$button-bar-button-padding:       .4rem !default;
+$button-bar-button-icon-size:     1rem !default;
+
+$light-bg:                 $light !default;
+$light-text:               #444 !default;
+$light-border:             #ddd !default;
+$light-active-bg:          #fafafa !default;
+$light-active-border:      #ccc !default;
+
+$stable-bg:                $stable !default;
+$stable-text:              #444 !default;
+$stable-border:            #b2b2b2 !default;
+$stable-active-bg:         #e5e5e5 !default;
+$stable-active-border:     #a2a2a2 !default;
+
+$positive-bg:              $positive !default;
+$positive-text:            #fff !default;
+$positive-border:          darken($positive, 10%) !default;
+$positive-active-bg:       darken($positive, 10%) !default;
+$positive-active-border:   darken($positive, 10%) !default;
+
+$assertive-bg:             $assertive !default;
+$assertive-text:           #fff !default;
+$assertive-border:         darken($assertive, 10%) !default;
+$assertive-active-bg:      darken($assertive, 10%) !default;
+$assertive-active-border:  darken($assertive, 10%) !default;
+
+$bar-light-bg:                    rgba($light-bg, $bar-transparency) !default;
+$bar-stable-bg:                   rgba($stable-bg, $bar-transparency) !default;
+$bar-positive-bg:                 rgba($positive-bg, $bar-transparency) !default;
+
+// Transitions
+// --------------------------------------------------
+
+$timing-fuction: cubic-bezier(.1,.5,.1,1); // Inspired by @c2prods
+
+
+// Borders
+// --------------------------------------------------
+
+$border-default-width: 1px;
+$border-default-color: $color-split;
+$border-default: $border-default-width solid $border-default-color;
+$border-radius: 0.2rem;
+
+//Box
+$box-shadow:       0 1px 3px rgba(0, 0, 0, .3) !default;
+
+//Items
+$item-padding: 16px;
+$item-default-active-bg:          #D9D9D9 !default;
+$item-icon-font-size:             25px !default;
+//$item-icon-fill-font-size:        28px !default;
+$item-icon-accessory-color:       #ccc !default;
+$item-icon-accessory-font-size:   16px !default;
+
+$item-avatar-width:               40px !default;
+$item-avatar-height:              40px !default;
+$item-avatar-border-radius:       50% !default;
+
+$item-thumbnail-width:            80px !default;
+$item-thumbnail-height:           80px !default;
+$item-thumbnail-margin:           10px !default;
+
+$item-divider-bg:                 #f5f5f5 !default;
+$item-divider-color:              #222 !default;
+
+//Badge
+$badge-border-radius:             10px !default;
+
+//input
+$input-label-color: #444 !default;
+$input-color: #111 !default;
+$input-color-placeholder: #999 !default;
+
+//Toggle
+$toggle-handle-width: 27px !default;
+$toggle-width:                    51px !default;
+$toggle-height:                   31px !default;
+$toggle-handle-dragging-bg-color: darken(#fff, 5%) !default;
+
+//checkbox
+$checkbox-width:                  28px !default;
+
+//Grid
+$grid-padding-width:              10px !default;
+$grid-responsive-sm-break:        567px !default;  // smaller than landscape phone
+$grid-responsive-md-break:        767px !default;  // smaller than portrait tablet
+$grid-responsive-lg-break:        1023px !default;
+
+//padding
+$content-padding:                 10px !default;
+
+// Popups
+// -------------------------------
+
+$popup-width:                     250px !default;
+$popup-enter-animation:           superScaleIn !default;
+$popup-border-radius:             0px !default;
+$popup-background-color:          rgba(255,255,255,0.9) !default;
+$popup-button-border-radius:      .1rem !default;
+$popup-button-line-height:        20px !default;
+$popup-button-min-height:         45px !default;

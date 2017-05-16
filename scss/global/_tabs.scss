@@ -1,0 +1,456 @@
+/**
+ * Tabs
+ * --------------------------------------------------
+ * A navigation bar with any number of tab items supported.
+ */
+
+.tabs {
+  @include display-flex();
+  @include flex-direction(horizontal);
+  @include justify-content(center);
+  @include translate3d(0,0,0);
+
+  @include tab-style($stable-bg, $stable-border, $stable-text);
+  @include tab-badge-style($stable-text, $stable-bg);
+
+  position: absolute;
+  bottom: 0;
+
+  z-index: 5;
+
+  width: 100%;
+  height: $tabs-height;
+
+  border-style: solid;
+  border-top-width: 1px;
+
+  background-size: 0;
+  line-height: $tabs-height;
+
+  @media (min--moz-device-pixel-ratio: 1.5),
+         (-webkit-min-device-pixel-ratio: 1.5),
+         (min-device-pixel-ratio: 1.5),
+         (min-resolution: 144dpi),
+         (min-resolution: 1.5dppx) {
+    padding-top: 2px;
+    border-top: none !important;
+    border-bottom: none;
+    background-position: top;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+  }
+
+}
+/* Allow parent element of tabs to define color, or just the tab itself */
+.tabs-light > .tabs,
+.tabs.tabs-light {
+  @include tab-style($light-bg, $light-border, $light-text);
+  @include tab-badge-style($light-text, $light-bg);
+}
+.tabs-stable > .tabs,
+.tabs.tabs-stable {
+  @include tab-style($stable-bg, $stable-border, $stable-text);
+  @include tab-badge-style($stable-text, $stable-bg);
+}
+.tabs-positive > .tabs,
+.tabs.tabs-positive {
+  @include tab-style($positive-bg, $positive-border, $positive-text);
+  @include tab-badge-style($positive-text, $positive-bg);
+}
+
+@mixin tabs-striped($style, $color, $background) {
+  &.#{$style} {
+    .tabs{
+      background-color: $background;
+    }
+    .tab-item {
+      color: rgba($color, 0.4);
+      opacity: 1;
+      .badge{
+        opacity:0.4;
+      }
+      &.tab-item-active,
+      &.active,
+      &.activated {
+        margin-top: -$tabs-striped-border-width;
+        color: $color;
+        border-style: solid;
+        border-width: $tabs-striped-border-width 0 0 0;
+        border-color: $color;
+      }
+    }
+  }
+  &.tabs-top{
+    .tab-item {
+      &.tab-item-active,
+      &.active,
+      &.activated {
+        .badge {
+          top: 4%;
+        }
+      }
+    }
+  }
+}
+
+@mixin tabs-background($style, $color, $border-color) {
+  .#{$style} {
+    .tabs,
+    &> .tabs{
+      background-color: $color;
+      background-image: linear-gradient(0deg, $border-color, $border-color 50%, transparent 50%);
+      border-color: $border-color;
+    }
+  }
+}
+
+@mixin tabs-striped-background($style, $color) {
+  &.#{$style} {
+    .tabs {
+      background-color: $color;
+      background-image:none;
+    }
+  }
+}
+
+@mixin tabs-color($style, $color) {
+  .#{$style} {
+    .tab-item {
+      color: rgba($color, 0.4);
+      opacity: 1;
+      .badge{
+        opacity:0.4;
+      }
+      &.tab-item-active,
+      &.active,
+      &.activated {
+        color: $color;
+        border: 0 solid $color;
+        .badge{
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@mixin tabs-striped-color($style, $color) {
+  &.#{$style} {
+    .tab-item {
+      color: rgba($color, 0.4);
+      opacity: 1;
+      .badge{
+        opacity:0.4;
+      }
+      &.tab-item-active,
+      &.active,
+      &.activated {
+        margin-top: -$tabs-striped-border-width;
+        color: $color;
+        border: 0 solid $color;
+        border-top-width: $tabs-striped-border-width;
+        .badge{
+          top:$tabs-striped-border-width;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.tabs-striped {
+  .tabs {
+    background-color: white;
+    background-image: none;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding-top: $tabs-striped-border-width;
+  }
+  .tab-item {
+    // default android tab style
+    &.tab-item-active,
+    &.active,
+    &.activated {
+      margin-top: -$tabs-striped-border-width;
+      border-style: solid;
+      border-width: $tabs-striped-border-width 0 0 0;
+      border-color: $gray-dark;
+      .badge{
+        top:$tabs-striped-border-width;
+        opacity: 1;
+      }
+    }
+  }
+  @include tabs-striped('tabs-light', $gray-dark, $light);
+  @include tabs-striped('tabs-stable', $gray-dark, $stable);
+  @include tabs-striped('tabs-positive', $light, $positive);
+
+  // doing this twice so striped tabs styles don't override specific bg and color vals
+  @include tabs-striped-background('tabs-background-light', $light);
+  @include tabs-striped-background('tabs-background-stable', $stable);
+  @include tabs-striped-background('tabs-background-positive', $positive);
+
+  @include tabs-striped-color('tabs-color-light', $light);
+  @include tabs-striped-color('tabs-color-stable', $stable);
+  @include tabs-striped-color('tabs-color-positive', $positive);
+
+}
+
+@include tabs-background('tabs-background-light', $light, $light-border);
+@include tabs-background('tabs-background-stable', $stable, $stable-border);
+@include tabs-background('tabs-background-positive', $positive, $positive-border);
+
+@include tabs-color('tabs-color-light', $light);
+@include tabs-color('tabs-color-stable', $stable);
+@include tabs-color('tabs-color-positive', $positive);
+
+@mixin tabs-standard-color($style, $color, $off-color:$gray-dark) {
+  &.#{$style} {
+    .tab-item {
+      color: $off-color;
+      &.tab-item-active,
+      &.active,
+      &.activated {
+        color: $color;
+      }
+    }
+  }
+}
+
+ion-tabs {
+  @include tabs-standard-color('tabs-color-active-light', $light, $gray-dark);
+  @include tabs-standard-color('tabs-color-active-stable', $stable, $gray-dark);
+  @include tabs-standard-color('tabs-color-active-positive', $positive, $gray-dark);
+}
+
+.tabs-top {
+  &.tabs-striped {
+    padding-bottom:0;
+    .tab-item{
+      background: transparent;
+      // animate the top bar, leave bottom for platform consistency
+      -webkit-transition: color .1s ease;
+      -moz-transition: color .1s ease;
+      -ms-transition: color .1s ease;
+      -o-transition: color .1s ease;
+      transition: color .1s ease;
+      &.tab-item-active,
+      &.active,
+      &.activated {
+        margin-top: $tabs-striped-border-width - 1px;
+        border-width: 0px 0px $tabs-striped-border-width 0px !important;
+        border-style: solid;
+        > .badge, > i{
+          margin-top: -$tabs-striped-border-width + 1px;
+        }
+      }
+      .badge{
+        -webkit-transition: color .2s ease;
+        -moz-transition: color .2s ease;
+        -ms-transition: color .2s ease;
+        -o-transition: color .2s ease;
+        transition: color .2s ease;
+      }
+    }
+   &:not(.tabs-icon-left):not(.tabs-icon-top){
+       .tab-item{
+          &.tab-item-active,
+          &.active,
+          &.activated {
+             .tab-title, i{
+            display:block;
+            margin-top: -$tabs-striped-border-width + 1px;
+          }
+        }
+      }
+    }
+    &.tabs-icon-left{
+       .tab-item{
+          margin-top: 1px;
+          &.tab-item-active,
+          &.active,
+          &.activated {
+            .tab-title, i {
+              margin-top: -0.1em;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Allow parent element to have tabs-top */
+/* If you change this, change platform.scss as well */
+.tabs-top > .tabs,
+.tabs.tabs-top {
+  top: $bar-base-height;
+  padding-top: 0;
+  background-position: bottom;
+  border-top-width: 0;
+  border-bottom-width: 1px;
+  .tab-item {
+    &.tab-item-active,
+    &.active,
+    &.activated {
+      .badge {
+        top: 4%;
+      }
+    }
+  }
+}
+.tabs-top ~ .bar-header {
+  border-bottom-width: 0;
+}
+
+.tab-item {
+  @include flex(1);
+  display: block;
+  overflow: hidden;
+
+  //max-width: 150px;
+  height: 100%;
+
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-weight: 400;
+  font-size: $font-size-default;
+  font-family: '-apple-system', "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+
+  opacity: 0.7;
+
+  &:hover {
+    cursor: pointer;
+  }
+  &.tab-hidden{
+    display:none;
+  }
+}
+
+.tabs-item-hide > .tabs,
+.tabs.tabs-item-hide {
+  display: none;
+}
+
+.tabs-icon-top > .tabs .tab-item,
+.tabs-icon-top.tabs .tab-item{
+  font-size: 10px;
+  line-height: $font-size-default;
+  .iconfont{
+    line-height: 1.6rem;
+  }
+}
+
+.tab-item .iconfont {
+  display: block;
+  margin: 0 auto;
+  //height: 32px;
+  height: 1.6rem;
+  font-size: 32px;
+  &:before{
+    line-height: 1;
+  }
+}
+
+.tabs-icon-left.tabs .tab-item,
+.tabs-icon-left > .tabs .tab-item,
+.tabs-icon-right.tabs .tab-item,
+.tabs-icon-right > .tabs .tab-item {
+  font-size: 10px;
+
+  .iconfont, .tab-title {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: -.1em;
+
+    &:before {
+    font-size: 24px;
+    line-height: $tabs-height;
+    }
+  }
+}
+
+.tabs-icon-left > .tabs .tab-item .iconfont,
+.tabs-icon-left.tabs .tab-item .iconfont {
+  padding-right: 3px;
+}
+
+.tabs-icon-right > .tabs .tab-item .iconfont,
+.tabs-icon-right.tabs .tab-item .iconfont {
+  padding-left: 3px;
+}
+
+.tabs-icon-only > .tabs .iconfont,
+.tabs-icon-only.tabs .iconfont {
+  line-height: inherit;
+}
+
+
+.tab-item.has-badge {
+  position: relative;
+}
+
+.tab-item .badge {
+  position: absolute;
+  top: 4%;
+  right: 33%; // fallback
+  right: calc(50% - 26px);
+  padding: 1px 6px;
+  height: auto;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+
+/* Navigational tab */
+
+/* Active state for tab */
+.tab-item.tab-item-active,
+.tab-item.active,
+.tab-item.activated {
+  opacity: 1;
+
+  &.tab-item-light {
+    color: $light;
+  }
+  &.tab-item-stable {
+    color: $stable;
+  }
+  &.tab-item-positive {
+    color: $positive;
+  }
+}
+
+.item.tabs {
+  @include display-flex();
+  padding: 0;
+
+  .iconfont:before {
+    position: relative;
+  }
+}
+
+.tab-item.disabled,
+.tab-item[disabled] {
+  opacity: .4;
+  cursor: default;
+  pointer-events: none;
+}
+
+.nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs{
+  top: 0
+}
+.pane[hide-nav-bar="true"] .has-tabs-top{
+  top:$tabs-height
+}
+
+//tab切换
+.tabCon{
+  display: none;
+}
+.tabCon.show{
+  display: block;
+}

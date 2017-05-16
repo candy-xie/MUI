@@ -1,0 +1,163 @@
+
+/**
+ * Toggle
+ * --------------------------------------------------
+ */
+
+.item-toggle {
+  pointer-events: none;
+}
+
+.toggle {
+  // set the color defaults
+  @include toggle-style(#4cd964, #4cd964);
+
+  position: relative;
+  display: inline-block;
+  pointer-events: auto;
+  margin: -5px;
+  padding: 5px;
+  //
+  //&.dragging {
+  //  .handle {
+  //    background-color: #f2f2f2 !important;
+  //  }
+  //}
+}
+
+.toggle {
+  &.toggle-light  {
+    @include toggle-style($light-border, $light-border);
+  }
+  &.toggle-stable  {
+    @include toggle-style($stable-border, $stable-border);
+  }
+  &.toggle-positive  {
+    @include toggle-style($positive-border, $positive);
+  }
+}
+
+.toggle input {
+  // hide the actual input checkbox
+  display: none;
+}
+
+/* the track appearance when the toggle is "off" */
+.toggle .track {
+  @include transition-timing-function(ease-in-out);
+  @include transition-duration(.3s);
+  @include transition-property((background-color, border));
+
+  display: inline-block;
+  box-sizing: border-box;
+  width: $toggle-width;
+  height: $toggle-height;
+  border: solid 2px #e6e6e6;
+  border-radius: 20px;
+  background-color: #fff;
+  content: ' ';
+  cursor: pointer;
+  pointer-events: none;
+}
+
+/* Fix to avoid background color bleeding */
+/* (occured on (at least) Android 4.2, Asus MeMO Pad HD7 ME173X) */
+.platform-android4_2 .toggle .track {
+  -webkit-background-clip: padding-box;
+}
+
+/* the handle (circle) thats inside the toggle's track area */
+/* also the handle's appearance when it is "off" */
+.toggle .handle {
+  @include transition(.3s cubic-bezier(0, 1.1, 1, 1.1));
+  @include transition-property((background-color, transform));
+  position: absolute;
+  display: block;
+  width: $toggle-handle-width;
+  height: $toggle-handle-width;
+  border-radius: $toggle-handle-width;
+  background-color: #fff;
+  top: 7px;
+  left: 7px;
+  box-shadow: 0 2px 7px rgba(0,0,0,.35), 0 1px 1px rgba(0,0,0,.15);
+
+  &:before {
+    // used to create a larger (but hidden) hit area to slide the handle
+    position: absolute;
+    top: -4px;
+    left: -21.5px;
+    padding: 18.5px 34px;
+    content: " ";
+  }
+}
+
+.toggle input:checked + .track .handle {
+  // the handle when the toggle is "on"
+  @include translate3d(20px, 0, 0);
+  background-color: #fff;
+}
+
+.item-toggle.active {
+  box-shadow: none;
+}
+
+.item-toggle,
+.item-toggle.item-complex .item-content {
+  // make sure list item content have enough padding on right to fit the toggle
+  padding-right: ($item-padding * 3) + $toggle-width;
+}
+
+.item-toggle.item-complex {
+  padding-right: 0;
+}
+
+.item-toggle .toggle {
+  // position the toggle to the right within a list item
+  position: absolute;
+  top: ($item-padding / 2) + 2;
+  right: $item-padding;
+  z-index: 3;
+}
+
+.toggle input:disabled + .track {
+  opacity: .6;
+}
+
+.toggle-small {
+  top: 16px !important;
+  .track {
+    border: 0;
+    width: 34px;
+    height: 15px;
+    background: #9e9e9e;
+  }
+  input:checked + .track {
+    background: rgba(0,150,137,.5);
+  }
+  .handle {
+    //top: 2px;
+    top: 5px;
+    left: 4px;
+    width: 21px;
+    height: 21px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+  }
+  input:checked + .track .handle {
+    @include translate3d(16px, 0, 0);
+    background: rgb(0,150,137);
+  }
+  &.item-toggle .toggle {
+    top: 19px;
+  }
+
+  .toggle-light  {
+    @include toggle-small-style($light-border);
+  }
+  .toggle-stable  {
+    @include toggle-small-style($stable-border);
+  }
+  .toggle-positive  {
+    @include toggle-small-style($positive);
+  }
+
+}

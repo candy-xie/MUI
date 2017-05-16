@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Panels-push</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/iconfont/iconfont.css">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current menu-push" id="menu-push">
+        <div class="bar bar-header bar-positive">
+            <button class="button button-icon iconfont icon-caidan" id="showLeftPush"></button>
+            <h1 class="title">侧栏</h1>
+        </div>
+        <div class="content has-header">
+            <div class="padding">
+                <h1>我是标题一</h1>
+                <h2>我是标题二</h2>
+                <h3>我是标题三</h3>
+                <h4>我是标题四</h4>
+                <h5>我是标题五</h5>
+                <h6>我是标题六</h6>
+            </div>
+        </div>
+    </div>
+    <div class="menu-overlay" id="menu-overlay"></div>
+    <div class="menu menu-vertical menu-left" id="menu-left">
+
+        <div class="content scroll-content has-header">
+            <div class="list">
+                <div class="item-divider">侧边栏</div>
+                <div class="item">
+                    列表1
+                </div>
+                <div class="item">
+                    列表2
+                </div>
+                <div class="item">
+                    列表3
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/classie.js"></script>
+<script>
+    window.onload = function(){
+        var menuLeft = document.getElementById( 'menu-left' ),
+                showLeftPush = document.getElementById( 'showLeftPush' ),
+                menuOverlay = document.getElementById( 'menu-overlay'),
+                menuPush = document.getElementById( 'menu-push' );
+
+        showLeftPush.onclick = function() {
+            classie.toggle( menuPush , 'menu-push-toright' );
+            classie.toggle( menuLeft, 'menu-open' );
+            menuOverlay.style.display = "block";
+
+        };
+        menuOverlay.onclick = function(){
+            classie.toggle( menuPush , 'menu-push-toright' );
+            classie.remove( menuLeft, 'menu-open' );
+            menuOverlay.style.display = "none";
+        }
+    };
+
+</script>
+</body>
+</html>

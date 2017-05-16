@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>searchBar</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/iconfont/iconfont.css">
+</head>
+<body>
+        <!--<div class="bar bar-header bar-light">-->
+            <!--<h1 class="title">搜索栏</h1>-->
+        <!--</div>-->
+        <div class="content">
+            <div class="item-input-inset searchbar" id="searchBar" style="background: #E2E2E2;">
+                <label class="item-input-wrapper">
+                    <i class="iconfont icon-search placeholder-icon"></i>
+                    <input type="text" placeholder="search">
+                </label>
+                <button class="button button-clear searchbar-cancel">
+                    取消
+                </button>
+            </div>
+        </div>
+<script>
+     var searchBar = document.getElementById("searchBar");
+     var searchBarInput = document.getElementsByClassName("searchbar")[0].getElementsByTagName("input")[0];
+     var searchBarCancle = document.getElementsByClassName("searchbar")[0].getElementsByTagName("button")[0];
+     searchBarInput.onfocus = function(){
+         searchBarCancle.style.cssText= "margin-right: 0; opacity: 1;"
+     }
+     searchBarInput.onblur = function(){
+         searchBarCancle.style.cssText= ""
+     }
+     searchBarCancle.onclick = function(e){
+         e.target.style.cssText= ""
+     }
+</script>
+</body>
+</html>

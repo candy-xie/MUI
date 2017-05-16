@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>扩展组件</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="MUI规范"/>
+    <link rel="stylesheet" href="../css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/demo.css">
+    <!--<script src="../js/jquery.min.js"></script>-->
+    <script src="../js/zepto.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="head-area clearfix">
+            <div class="fl"><h1><a href="/">MUI</a></h1></div>
+            <div class="fr"><a class="nav-toggle"></a>
+                <ol class="main-nav">
+                    <li><a href="components.html">基础组件</a></li>
+                    <li><a href="extends.html">扩展组件</a></li>
+                    <li><a href="customize.html">定制组件</a></li>
+                    <li><a href="extendJs.html">JS组件</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>扩展组件</h1>
+        <p>简单易用，轻量快捷，为移动端服务的前端框架</p>
+    </div>
+</header>
+<div class="content">
+    <ul class="side-menu">
+        <li class="active">
+            <a href="#quantity">购物车数量</a>
+        </li>
+        <li>
+            <a href="#popup">弹框</a>
+        </li>
+        <li>
+            <a href="#video">视频</a>
+        </li>
+    </ul>
+    <div class="components">
+        <div class="component" id="quantity">
+            <h2 class="component-title">购物车数量</h2>
+            <!--<p class="component-desc">Header是固定在屏幕顶部的组件。可以包含如标题和左右的功能按钮, 可以自定义颜色。</p>-->
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;">
+                    <div class="quantity">
+                        <a href="">
+                            <i class="iconfont icon-minus"></i>
+                        </a>
+                        <input type="text" value="10"/>
+                        <a href="">
+                            <i class="iconfont icon-plus"></i>
+                        </a>
+                    </div>
+                    <br/>
+                    <div class="quantity">
+                        <a href="" class="disabled">
+                            <i class="iconfont icon-minus"></i>
+                        </a>
+                        <input type="text" value="1"/>
+                        <a href="">
+                            <i class="iconfont icon-plus"></i>
+                        </a>
+                    </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="quantity"&gt;</code>
+                     <code>&lt;a href=""&gt;</code>
+                     <code>&lt;i class="iconfont icon-minus"&gt;&lt;/i&gt;</code>
+                     <code>&lt;/a&gt;</code>
+                     <code>&lt;input type="text" value="10"/&gt;</code>
+                     <code>&lt;a href=""&gt;</code>
+                     <code>&lt;i class="iconfont icon-plus"&gt;&lt;/i&gt;</code>
+                     <code>&lt;/a&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;br/&gt;</code>
+                     <code>&lt;div class="quantity"&gt;</code>
+                     <code>&lt;a href=""&gt;</code>
+                     <code>&lt;i class="iconfont icon-minus"&gt;&lt;/i&gt;</code>
+                     <code>&lt;/a&gt;</code>
+                     <code>&lt;input type="text" value="1"/&gt;</code>
+                     <code>&lt;a href=""&gt;</code>
+                     <code>&lt;i class="iconfont icon-plus"&gt;&lt;/i&gt;</code>
+                     <code>&lt;/a&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+        </div>
+        <div class="component" id="popup">
+            <h2 class="component-title">弹窗</h2>
+            <p class="component-desc">对话框允许程序创建、显示弹出窗口，分为提示对话框、确认对话框、警示框。</p>
+            <h3 class="component-title-h3" id="alert">警示框</h3>
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;background-color: rgba(0, 0, 0, 0.4);">
+                    <!--<div class="backdrop active visible"></div>-->
+                    <div class="popup-container popup-showing active" style="position: static;">
+                        <div class="popup">
+                            <div class="popup-head">
+                                <h3 class="popup-title ng-binding">提示</h3>
+                            </div>
+                            <div class="popup-body">
+                                <span>我是提示弹窗啦！</span>
+                            </div>
+                            <div class="popup-buttons">
+                                <button class="button button-positive">确定</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="popup-container popup-showing active"&gt;</code>
+                     <code>&lt;div class="popup"&gt;</code>
+                     <code>&lt;div class="popup-head"&gt;</code>
+                     <code>&lt;h3 class="popup-title"&gt;提示&lt;/h3&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="popup-body"&gt;</code>
+                     <code>&lt;span&gt;我是提示弹窗啦！&lt;/span&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="popup-buttons"&gt;</code>
+                     <code>&lt;button class="button button-positive"&gt;确定&lt;/button&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3" id="confirm">确认对话框</h3>
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;background-color: rgba(0, 0, 0, 0.4);">
+                    <!--<div class="backdrop active visible"></div>-->
+                    <div class="popup-container popup-showing active" style="position: static;">
+                        <div class="popup">
+                            <div class="popup-head">
+                                <h3 class="popup-title">关闭</h3>
+                            </div>
+                            <div class="popup-body">
+                                <span>你确定要关闭我吗？</span>
+                            </div>
+                            <div class="popup-buttons">
+                                <button class="button button-light">取消</button>
+                                <button class="button button-positive">确定</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="popup-container popup-showing active"&gt;</code>
+                     <code>&lt;div class="popup"&gt;</code>
+                     <code>&lt;div class="popup-head"&gt;</code>
+                     <code>&lt;h3 class="popup-title"&gt;关闭&lt;/h3&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="popup-body"&gt;</code>
+                     <code>&lt;span&gt;你确定要关闭我吗？&lt;/span&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="popup-buttons"&gt;</code>
+                     <code>&lt;button class="button button-light"&gt;取消&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-positive"&gt;确定&lt;/button&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+            <h3 class="component-title-h3" id="confirm">提示对话框</h3>
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;background-color: rgba(0, 0, 0, 0.4);">
+                    <!--<div class="backdrop active visible"></div>-->
+                    <div class="popup-container popup-showing active" style="position: static;">
+                        <div class="popup">
+                            <div class="popup-head">
+                                <h3 class="popup-title">请输入密码</h3>
+                                <h5 class="popup-sub-title">输入子账号密码</h5>
+                            </div>
+                            <div class="popup-body">
+                                <input type="password"/>
+                            </div>
+                            <div class="popup-buttons">
+                                <button class="button button-light">取消</button>
+                                <button class="button button-positive">确定</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;div class="popup-container popup-showing active"&gt;</code>
+                     <code>&lt;div class="popup"&gt;</code>
+                     <code>&lt;div class="popup-head"&gt;</code>
+                     <code>&lt;h3 class="popup-title"&gt;请输入密码&lt;/h3&gt;</code>
+                     <code>&lt;h5 class="popup-sub-title"&gt;输入子账号密码&lt;/h5&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="popup-body"&gt;</code>
+                     <code>&lt;input type="password"/&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;div class="popup-buttons"&gt;</code>
+                     <code>&lt;button class="button button-light"&gt;取消&lt;/button&gt;</code>
+                     <code>&lt;button class="button button-positive"&gt;确定&lt;/button&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                     <code>&lt;/div&gt;</code>
+                </pre>
+            </div>
+        </div>
+        <div class="component" id="video">
+            <h2 class="component-title">视频<a href="../demo/html/video.html" class="link">演示</a></h2>
+            <div class="box">
+                <div class="demo" style="padding: 50px 30px;">
+                    <video width="320" height="240" controls id="video">
+                        <source src="http://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4"/>
+                    </video>
+                </div>
+                <pre class="highlight">
+                     <code>&lt;video width="320" height="240" controls id="video"&gt;</code>
+                     <code>&lt;source src="http://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4"/&gt;</code>
+                     <code>&lt;/video&gt;</code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>MUI规范1.1 2016/03</p>
+</footer>
+
+<script src="../js/sm.js"></script>
+<script src="../js/sm-extend.js"></script>
+<script>
+    $(window).scroll(function(){
+
+        $(".side-menu li").click(function(){
+            $(this).addClass("active");
+            if($(this).has("ul")){
+                $(this).children("ul").show("slow");
+                $(".side-menu li ul li").click(function(){
+                    $(this).addClass("active").siblings().removeClass("active");
+                })
+            }
+            $(this).siblings().removeClass("active");
+            $(this).siblings().children("ul").hide("slow");
+        })
+
+        var scrollTop = $(window).scrollTop();
+
+        if(scrollTop > 102 ){
+            $(".side-menu").css("position","fixed");
+        }
+        else{
+            $(".side-menu").css("position","relative");
+        }
+        if(scrollTop>400){
+            $(".scroll-top-btn").show();
+            $(".scroll-top-btn").click(function(e){
+                e.preventDefault();
+                $("html,body").animate({scrollTop:0},800)
+            })
+        }
+        else{
+            $(".scroll-top-btn").hide();
+        }
+
+    })
+</script>
+</body>
+</html>
