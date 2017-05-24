@@ -1,0 +1,228 @@
+//购物车
+.store-link {
+  padding: 8px 13px;
+  background: #fff;
+  font-size: .7rem;
+  .badge {
+    top: 8px;
+  }
+}
+.list-customize-order{
+  .store-link{
+    background: #fafafa;
+  }
+  .item-radio{
+    padding-left: 45px;
+  }
+  .radio-icon{
+    left: 0;
+    width: 44px;
+    input[checked]{
+      & + .circle{
+        border: 0 none;
+        .iconfont{
+          visibility: visible;
+          color: #f22f2e;
+          right: initial;
+        }
+      }
+    }
+  }
+  .product{
+    position: relative;
+    .radio-icon{
+      left: -44px;
+      width: 44px;
+    }
+    .product-info{
+      h2{
+        font-size: 15px;
+        height: 39px;
+      }
+    }
+  }
+  .product-img{
+    margin-right: 10px;
+    .out-of-stock{
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      line-height: 4.5rem;
+      color: #fff;
+      font-size: .75rem;
+    }
+  }
+  .product-info{
+    .quantity{
+      float: right;
+      input{
+        position: inherit;
+      }
+    }
+  }
+  .activity{
+    font-size: 12px;
+    margin-top: 8px;
+    .label{
+      vertical-align: baseline;
+    }
+    .activity-cut{
+      color: $positive;
+    }
+    .activity-back{
+      color: #1acda3;
+    }
+  }
+}
+.footer-no-padding{
+  .radio-icon{
+    left: 0;
+    width: 85px;
+    input[checked]{
+      & + .circle{
+        border: 0 none;
+        .iconfont{
+          visibility: visible;
+          color: #f22f2e;
+        }
+      }
+    }
+  }
+  .item-radio{
+    padding-left: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    color: $gray-darker;
+    width: 85px;
+    display: inline-block;
+  }
+  .button.button-clear{
+    width: 50px;
+    line-height: 44px;
+    font-size: 14px;
+  }
+}
+.customize-order-referee{
+  padding: 0 13px;
+  font-size: .5rem;
+  color: $gray-light;
+  span{
+    display: inline-block;
+  }
+}
+//底部
+.footer-no-padding{
+  padding: 0;
+  .row{
+    padding: 0;
+    .price{
+      line-height: 44px;
+      font-size: .75rem;
+      padding-left: 15px;
+      color: $positive;
+    }
+  }
+  .button-full{
+    margin: 0;
+    height: 44px;
+    font-size: .75rem;
+  }
+}
+// 商品
+.ad{
+  display: block;
+  width: 100%;
+}
+.item-product{
+  padding: 13px 10px;
+  .exp{
+    font-size: .6rem;
+    padding-top: 10px;
+    color: $positive;
+    line-height: 1.2;
+  }
+}
+.product{
+  .product-img{
+    z-index: 9;
+    position: relative;
+    float: left;
+    width: 6rem;
+    height: 4.5rem;
+    text-align: center;
+    img{
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  .product-info{
+    position: relative;
+    padding-left: 6rem;
+    h2{
+      margin-bottom: .25rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      white-space: normal;
+      line-height: 20px;
+    }
+    .num{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: .7rem;
+      color: $gray-dark;
+    }
+  }
+  .product-gift{
+    color: #1acda3;
+  }
+  .price{
+    font-size: .9rem;
+    color: $positive;
+    small{
+      color: $gray-light;
+      font-size: 12px;
+      text-decoration: line-through;
+      padding-left: 5px;
+    }
+  }
+  p{
+    margin-bottom: 0;
+  }
+}
+.product.order-product{
+  h2{
+    margin-bottom: .6rem;
+  }
+}
+.product-purchase{
+  padding-top: 13px;
+  padding-left: 6rem;
+  .quantity{
+    display: inline-block;
+    position: absolute;
+    left: 13px;
+    & ~ .button{
+      width: 4rem;
+    }
+  }
+  .button-shanchu{
+    padding-left: 0;
+    border: 0 none;
+    background: transparent;
+    color: $gray-light;
+    min-height: 28px;
+    line-height: 28px;
+    height: 28px;
+    .iconfont{
+      display: -webkit-box;
+      height: 28px;
+      margin-top: -.55rem;
+    }
+
+  }
+}
