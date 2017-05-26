@@ -433,35 +433,35 @@ body {
   width: device-width; }
 /* If you change these, change platform.scss as well */
 .has-header {
-  top: 2.2rem; }
+  top: 44px; }
 
 .no-header {
   top: 0; }
 
 .has-subheader {
-  top: 4.4rem; }
+  top: 88px; }
 
 .has-tabs-top {
-  top: 4.7rem; }
+  top: 94px; }
 
 .has-header.has-subheader.has-tabs-top {
-  top: 6.9rem; }
+  top: 138px; }
 
 .has-footer {
-  bottom: 2.2rem; }
+  bottom: 44px; }
 
 .has-subfooter {
-  bottom: 4.4rem; }
+  bottom: 88px; }
 
 .has-tabs,
 .bar-footer.has-tabs {
-  bottom: 2.5rem; }
+  bottom: 50px; }
 
 .bar-subfooter.has-tabs {
-  bottom: 4.7rem; }
+  bottom: 94px; }
 
 .has-footer.has-tabs {
-  bottom: 4.7rem; }
+  bottom: 94px; }
 
 /**
  * Typography
@@ -778,7 +778,7 @@ a {
   box-sizing: border-box;
   padding: 5px;
   width: 100%;
-  height: 2.2rem;
+  height: 44px;
   border-width: 0;
   border-style: solid;
   border-top: 1px solid transparent;
@@ -846,13 +846,13 @@ a {
     overflow: hidden;
     margin: 0 10px;
     min-width: 30px;
-    height: 2.15rem;
+    height: 43px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 0.85rem;
     font-weight: 500;
-    line-height: 2.2rem; }
+    line-height: 44px; }
     .bar .title.title-left {
       text-align: left; }
     .bar .title.title-right {
@@ -882,7 +882,6 @@ a {
     .bar .button.button-clear, .bar button.button-clear {
       padding-right: 2px;
       padding-left: 2px;
-      font-weight: 300;
       font-size: 0.85rem; }
       .bar .button.button-clear .iconfont:before, .bar .button.button-clear.iconfont:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before, .bar button.button-clear .iconfont:before, .bar button.button-clear.iconfont:before, .bar button.button-clear.icon-left:before, .bar button.button-clear.icon-right:before {
         line-height: 1.6rem; }
@@ -929,7 +928,7 @@ a {
   font-size: 24px; }
 .platform-android .bar .title {
   font-size: 19px;
-  line-height: 2.2rem; }
+  line-height: 44px; }
 
 .bar-light .button {
   border-color: #ddd;
@@ -1005,7 +1004,7 @@ a {
   border-top-width: 1px;
   border-bottom-width: 0;
   background-position: top;
-  height: 2.2rem; }
+  height: 44px; }
   .bar-footer.item-input-inset {
     position: absolute; }
 
@@ -1013,14 +1012,14 @@ a {
   padding: 0; }
 
 .bar-subheader {
-  top: 2.2rem;
+  top: 44px;
   display: block;
-  height: 2.2rem; }
+  height: 44px; }
 
 .bar-subfooter {
-  bottom: 2.2rem;
+  bottom: 44px;
   display: block;
-  height: 2.2rem; }
+  height: 44px; }
 
 .nav-bar-block {
   position: absolute;
@@ -1388,11 +1387,11 @@ a.button {
   bottom: 0;
   z-index: 5;
   width: 100%;
-  height: 2.45rem;
+  height: 49px;
   border-style: solid;
   border-top-width: 1px;
   background-size: 0;
-  line-height: 2.45rem; }
+  line-height: 49px; }
   .tabs .tab-item .badge {
     background-color: #444;
     color: #f8f8f8; }
@@ -1641,7 +1640,7 @@ ion-tabs.tabs-color-active-positive .tab-item {
 /* If you change this, change platform.scss as well */
 .tabs-top > .tabs,
 .tabs.tabs-top {
-  top: 2.2rem;
+  top: 44px;
   padding-top: 0;
   background-position: bottom;
   border-top-width: 0;
@@ -1722,7 +1721,7 @@ ion-tabs.tabs-color-active-positive .tab-item {
     .tabs-icon-right > .tabs .tab-item .iconfont:before,
     .tabs-icon-right > .tabs .tab-item .tab-title:before {
       font-size: 24px;
-      line-height: 2.45rem; }
+      line-height: 49px; }
 
 .tabs-icon-left > .tabs .tab-item .iconfont,
 .tabs-icon-left.tabs .tab-item .iconfont {
@@ -1789,7 +1788,7 @@ ion-tabs.tabs-color-active-positive .tab-item {
   top: 0; }
 
 .pane[hide-nav-bar="true"] .has-tabs-top {
-  top: 2.45rem; }
+  top: 49px; }
 
 .tabCon {
   display: none; }
@@ -2189,7 +2188,8 @@ a.item-content {
 .item-icon-right {
   padding-right: 54px; }
   .item-icon-right .iconfont {
-    right: 16px; }
+    right: 16px;
+    color: #999999; }
 
 .item-complex.item-icon-right {
   padding-right: 0; }
@@ -3095,14 +3095,13 @@ input:checked + .checkbox-icon:after {
 .item-radio .radio-icon {
   /* checkmark icon will be hidden by default */
   position: absolute;
-  top: 0;
+  top: 50%;
+  margin-top: -22px;
   right: 0;
   z-index: 3;
-  visibility: hidden;
-  padding: 14px;
-  height: 100%;
+  padding: 11px;
   font-size: 24px;
-  line-height: 1; }
+  line-height: 22px; }
 
 .item-radio input {
   /* hide any radio button inputs elements (the ugly circles) */
@@ -4352,24 +4351,43 @@ ion-slides {
   .store-link .badge {
     top: 8px; }
 
+.list-customize-order .swipeCon {
+  position: relative;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+.list-customize-order .product-delete {
+  position: absolute;
+  right: -50px;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  text-align: center;
+  background: #f60; }
+  .list-customize-order .product-delete a {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 16px;
+    white-space: nowrap; }
+.list-customize-order .checkbox input:checked:before, .list-customize-order .checkbox input:checked + .checkbox-icon:before {
+  background: #f22f2e;
+  border-color: #f22f2e; }
 .list-customize-order .store-link {
   background: #fafafa; }
-.list-customize-order .item-radio {
+.list-customize-order .item-checkbox {
   padding-left: 45px; }
-.list-customize-order .radio-icon {
-  left: 0;
-  width: 44px; }
-  .list-customize-order .radio-icon input[checked] + .circle {
-    border: 0 none; }
-    .list-customize-order .radio-icon input[checked] + .circle .iconfont {
-      visibility: visible;
-      color: #f22f2e;
-      right: initial; }
+.list-customize-order .checkbox {
+  position: absolute;
+  width: 44px;
+  left: 0; }
+  .list-customize-order .checkbox.hide {
+    display: none; }
 .list-customize-order .product {
   position: relative; }
-  .list-customize-order .product .radio-icon {
-    left: -44px;
-    width: 44px; }
   .list-customize-order .product .product-info h2 {
     font-size: 15px;
     height: 39px; }
@@ -4395,36 +4413,15 @@ ion-slides {
   .list-customize-order .activity .label {
     vertical-align: baseline; }
   .list-customize-order .activity .activity-cut {
-    color: #387ef5; }
+    color: #f22f2e; }
   .list-customize-order .activity .activity-back {
     color: #1acda3; }
 
-.footer-no-padding .radio-icon {
-  left: 0;
-  width: 85px; }
-  .footer-no-padding .radio-icon input[checked] + .circle {
-    border: 0 none; }
-    .footer-no-padding .radio-icon input[checked] + .circle .iconfont {
-      visibility: visible;
-      color: #f22f2e; }
-.footer-no-padding .item-radio {
-  padding-left: 44px;
-  line-height: 44px;
-  font-size: 14px;
-  color: #333333;
-  width: 85px;
-  display: inline-block; }
 .footer-no-padding .button.button-clear {
   width: 50px;
   line-height: 44px;
-  font-size: 14px; }
-
-.customize-order-referee {
-  padding: 0 13px;
-  font-size: .5rem;
-  color: #999999; }
-  .customize-order-referee span {
-    display: inline-block; }
+  font-size: 14px;
+  color: #333; }
 
 .footer-no-padding {
   padding: 0; }
@@ -4434,11 +4431,22 @@ ion-slides {
       line-height: 44px;
       font-size: .75rem;
       padding-left: 15px;
-      color: #387ef5; }
+      color: #f22f2e; }
   .footer-no-padding .button-full {
     margin: 0;
     height: 44px;
-    font-size: .75rem; }
+    font-size: .75rem;
+    border-color: #f22f2e;
+    background-color: #f22f2e; }
+  .footer-no-padding .item-checkbox {
+    display: inline-block;
+    padding-left: 50px;
+    line-height: 44px;
+    width: 85px;
+    font-size: 14px; }
+    .footer-no-padding .item-checkbox .checkbox {
+      width: 44px;
+      left: 0; }
 
 .ad {
   display: block;
@@ -4449,7 +4457,7 @@ ion-slides {
   .item-product .exp {
     font-size: .6rem;
     padding-top: 10px;
-    color: #387ef5;
+    color: #f22f2e;
     line-height: 1.2; }
 
 .product .product-img {
@@ -4482,7 +4490,7 @@ ion-slides {
   color: #1acda3; }
 .product .price {
   font-size: .9rem;
-  color: #387ef5; }
+  color: #f22f2e; }
   .product .price small {
     color: #999999;
     font-size: 12px;
@@ -4503,17 +4511,9 @@ ion-slides {
     left: 13px; }
     .product-purchase .quantity ~ .button {
       width: 4rem; }
-  .product-purchase .button-shanchu {
-    padding-left: 0;
-    border: 0 none;
-    background: transparent;
-    color: #999999;
-    min-height: 28px;
-    line-height: 28px;
-    height: 28px; }
-    .product-purchase .button-shanchu .iconfont {
-      display: -webkit-box;
-      height: 28px;
-      margin-top: -.55rem; }
+
+.swipeleft {
+  transform: translateX(-50px);
+  -webkit-transform: translateX(-50px); }
 
 /*# sourceMappingURL=style.css.map */

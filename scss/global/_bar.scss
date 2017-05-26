@@ -100,7 +100,7 @@
     margin: 0 10px;
 
     min-width: 30px;
-    height: $bar-base-height - 0.05rem;
+    height: $bar-base-height - 1px;
 
     text-align: center;
 
@@ -159,7 +159,7 @@
     &.button-clear {
       padding-right: 2px;
       padding-left: 2px;
-      font-weight: 300;
+      //font-weight: 300;
       font-size: $bar-title-font-size;
 
       .iconfont:before,
