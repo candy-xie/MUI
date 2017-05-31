@@ -103,6 +103,10 @@
     font-size: 14px;
     color: #333;
   }
+  .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+    background: #f22f2e;
+    border-color: #f22f2e;
+  }
 }
 //底部
 .footer-no-padding{

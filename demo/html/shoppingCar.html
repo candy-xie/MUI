@@ -38,7 +38,7 @@
                                     <a href="" class="disabled">
                                         <i class="iconfont icon-minus"></i>
                                     </a>
-                                    <input type="text">
+                                    <input type="text" value=" ">
                                     <a href="">
                                         <i class="iconfont icon-plus"></i>
                                     </a>
@@ -70,7 +70,7 @@
                                     <a href="" class="disabled">
                                         <i class="iconfont icon-minus"></i>
                                     </a>
-                                    <input type="text">
+                                    <input type="text" value=" ">
                                     <a href="">
                                         <i class="iconfont icon-plus"></i>
                                     </a>
@@ -111,7 +111,7 @@
                                     <a href="" class="disabled">
                                         <i class="iconfont icon-minus"></i>
                                     </a>
-                                    <input type="text">
+                                    <input type="text" value=" ">
                                     <a href="">
                                         <i class="iconfont icon-plus"></i>
                                     </a>
@@ -148,21 +148,24 @@
         </div>
     </div>
     <script src="../js/classie.js"></script>
-    <!--<script src="../js/jquery.min.js"></script>-->
+
     <script>
         //侧滑显示删除按钮
+        var expansion;
         var item = document.querySelectorAll('.swipeCon');
         for (var i=0;i<item.length;i++){
-            var x,X,swipeX;
-            item[i].addEventListener('touchstart',function (event) {
+            var x,X,swipeX,productDelete;
+            // 清空左滑
+            function clearSwipe(event){
                 x= event.changedTouches[0].pageX;
                 swipeX = true;
-                if(expansion) {    // 清空左滑
+                if(expansion) {
                     classie.remove( expansion, 'swipeleft' )
                 }
 
-            })
-            item[i].addEventListener('touchmove',function (event) {
+            }
+//            左右滑动
+            function swipe(event) {
                 X = event.changedTouches[0].pageX;
 //                左右滑动
                 if(swipeX && (X-x) > 0){   //右滑
@@ -173,9 +176,20 @@
                     classie.add( this, 'swipeleft' );
                     expansion = this;
                 }
+            }
+            item[i].addEventListener('touchstart',clearSwipe);
+            item[i].addEventListener('touchmove',swipe);
 
-            })
+//            删除事件
+            productDelete = item[i].getElementsByClassName("product-delete")[0];
+            productDelete.addEventListener('click',function (event) {
+                var swipeCon = this.parentNode;
+                swipeCon.removeEventListener('touchstart',clearSwipe);
+                swipeCon.style.display = "none";
+            });
+
         }
+
     </script>
 </body>
 </html>
