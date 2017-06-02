@@ -38,6 +38,7 @@
     border-color: #f22f2e;
   }
   .store-link{
+    padding: 13px;
     background: #fafafa;
   }
   .item-checkbox{
@@ -97,6 +98,12 @@
   }
 }
 .footer-no-padding{
+  .total-price{
+    display: inline-block;
+    .num{
+      color: #f22f2e;
+    }
+  }
   .button.button-clear{
     width: 50px;
     line-height: 44px;

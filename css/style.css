@@ -4377,6 +4377,7 @@ ion-slides {
   background: #f22f2e;
   border-color: #f22f2e; }
 .list-customize-order .store-link {
+  padding: 13px;
   background: #fafafa; }
 .list-customize-order .item-checkbox {
   padding-left: 45px; }
@@ -4417,6 +4418,10 @@ ion-slides {
   .list-customize-order .activity .activity-back {
     color: #1acda3; }
 
+.footer-no-padding .total-price {
+  display: inline-block; }
+  .footer-no-padding .total-price .num {
+    color: #f22f2e; }
 .footer-no-padding .button.button-clear {
   width: 50px;
   line-height: 44px;
