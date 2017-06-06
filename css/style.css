@@ -4373,9 +4373,11 @@ ion-slides {
     color: #fff;
     font-size: 16px;
     white-space: nowrap; }
-.list-customize-order .checkbox input:checked:before, .list-customize-order .checkbox input:checked + .checkbox-icon:before {
+.list-customize-order .checkbox input.checked:before, .list-customize-order .checkbox input.checked + .checkbox-icon:before {
   background: #f22f2e;
   border-color: #f22f2e; }
+.list-customize-order .checkbox input.checked:after, .list-customize-order .checkbox input.checked + .checkbox-icon:after {
+  opacity: 1; }
 .list-customize-order .store-link {
   padding: 13px;
   background: #fafafa; }
@@ -4433,6 +4435,11 @@ ion-slides {
 
 .footer-no-padding {
   padding: 0; }
+  .footer-no-padding .checkbox input.checked:before, .footer-no-padding .checkbox input.checked + .checkbox-icon:before {
+    background: #f22f2e;
+    border-color: #f22f2e; }
+  .footer-no-padding .checkbox input.checked:after, .footer-no-padding .checkbox input.checked + .checkbox-icon:after {
+    opacity: 1; }
   .footer-no-padding .row {
     padding: 0; }
     .footer-no-padding .row .price {

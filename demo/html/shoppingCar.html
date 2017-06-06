@@ -14,7 +14,7 @@
     <div class="content scroll-content has-header has-footer">
         <div class="list list-customize-order">
             <div class="item item-checkbox item-icon-right store-link">
-                <label class="checkbox">
+                <label class="checkbox checkPart">
                     <input type="checkbox">
                 </label>
                 易生活副食直营
@@ -86,7 +86,7 @@
         </div>
         <div class="list list-customize-order">
             <div class="item item-checkbox item-icon-right store-link">
-                <label class="checkbox">
+                <label class="checkbox checkPart">
                     <input type="checkbox">
                 </label>
                 易生活副食直营
@@ -94,7 +94,7 @@
             </div>
             <div class="swipeCon">
                 <div class="item item-checkbox item-product">
-                    <label class="checkbox hide">
+                    <label class="checkbox">
                         <input type="checkbox">
                     </label>
                     <div class="product">
@@ -132,7 +132,7 @@
         <div class="row">
             <div class="col-66">
                 <div class="item-checkbox">
-                    <label class="checkbox">
+                    <label class="checkbox checkAll">
                         <input type="checkbox">
                     </label>
                     全选
@@ -219,24 +219,63 @@
             }
             var amount = parseInt(input.val());
             amount --;
-            if(amount <= 1){
+            if(amount <= 0){
                 _this.addClass('disabled');
-                input.val(amount)
+                return false;
             }else{
                 input.val(amount)
             }
         }
 
 //        单选
-        $('.checkbox').click(function () {
-            var checkbox = $(this).children('input');
-            console.log(checkbox)
-            if(checkbox.getAttribute('checked') == 'true'){
-                checkbox.setAttribute("checked",'false')
+        $('.checkbox').click(function (event) {
+            event.preventDefault();
+            var input = $(this).find('input');
+//            console.log(input);
+            input.toggleClass('checked');
+
+//          部分选择CheckBox 数量
+            var checkLen = $(this).parents('.list-customize-order').children('.swipeCon').length;
+            console.log(checkLen);
+            var checkckLen = $('.checkPart').filter('.checked').length;
+
+
+        })
+
+//        全选
+        $('.checkAll').click(function () {
+            var checkbox = $('.checkbox').find('input');
+            $(this).toggleClass('checked');
+            if($(this).hasClass('checked')){
+                checkbox.addClass('checked');
             }else{
-                checkbox.setAttribute("checked",'true')
+                checkbox.removeClass('checked');
             }
         })
+//
+
+//        部分全选
+        $('.checkPart').click(function () {
+            var checkbox = $(this).parent('.store-link').siblings('.swipeCon').find('.checkbox input');
+            console.log(checkbox.length);
+            $(this).toggleClass('checked');
+            if($(this).hasClass('checked')){
+                checkbox.addClass('checked');
+            }else{
+                checkbox.removeClass('checked');
+            }
+
+            var checkPartLen = $('.checkPart').length;
+            var checkPartCkLen = $('.checkPart').filter('.checked').length;
+            if(checkPartCkLen == checkPartLen){
+                $('.checkAll input').addClass('checked');
+            }else{
+                $('.checkAll input').removeClass('checked');
+            }
+
+            
+        })
+
 
     </script>
 </body>

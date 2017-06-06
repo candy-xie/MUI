@@ -33,9 +33,12 @@
       white-space: nowrap;
     }
   }
-  .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+  .checkbox input.checked:before, .checkbox input.checked+ .checkbox-icon:before {
     background: #f22f2e;
     border-color: #f22f2e;
+  }
+  .checkbox input.checked:after, .checkbox input.checked+.checkbox-icon:after{
+    opacity: 1;
   }
   .store-link{
     padding: 13px;
@@ -118,6 +121,13 @@
 //底部
 .footer-no-padding{
   padding: 0;
+  .checkbox input.checked:before, .checkbox input.checked+ .checkbox-icon:before {
+    background: #f22f2e;
+    border-color: #f22f2e;
+  }
+  .checkbox input.checked:after, .checkbox input.checked+.checkbox-icon:after{
+    opacity: 1;
+  }
   .row{
     padding: 0;
     .price{
