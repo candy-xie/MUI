@@ -237,7 +237,23 @@
 //          部分选择CheckBox 数量
             var checkLen = $(this).parents('.list-customize-order').children('.swipeCon').length;
             console.log(checkLen);
-            var checkckLen = $('.checkPart').filter('.checked').length;
+            var checkckLen = $(this).parents('.list-customize-order').find('.swipeCon .checkbox input').filter('.checked').length;
+            console.log(checkckLen);
+            var checkPart = $(this).parents('.list-customize-order').find('.checkPart input');
+            if(checkLen == checkckLen){
+                checkPart.addClass('checked');
+            }else{
+                checkPart.removeClass('checked');
+            }
+
+//            全选
+            var checkAllLen = $('.checkbox').length-1;
+            var checkAllCkLen = $('.checkbox').children('input').filter('.checked').length;
+            if(checkAllLen == checkAllCkLen){
+                $('.checkAll input').addClass('checked');
+            }else{
+                $('.checkAll input').removeClass('checked');
+            }
 
 
         })
@@ -257,16 +273,16 @@
 //        部分全选
         $('.checkPart').click(function () {
             var checkbox = $(this).parent('.store-link').siblings('.swipeCon').find('.checkbox input');
-            console.log(checkbox.length);
-            $(this).toggleClass('checked');
-            if($(this).hasClass('checked')){
+//            console.log(checkbox.length);
+            $(this).children('input').toggleClass('checked');
+            if($(this).children('input').hasClass('checked')){
                 checkbox.addClass('checked');
             }else{
                 checkbox.removeClass('checked');
             }
 
             var checkPartLen = $('.checkPart').length;
-            var checkPartCkLen = $('.checkPart').filter('.checked').length;
+            var checkPartCkLen = $('.checkPart').children('input').filter('.checked').length;
             if(checkPartCkLen == checkPartLen){
                 $('.checkAll input').addClass('checked');
             }else{
